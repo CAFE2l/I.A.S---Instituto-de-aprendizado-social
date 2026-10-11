@@ -167,6 +167,120 @@
     });
   }
 
+  const aiExplanations = {
+    person: ['A pessoa conduz.', 'A IA apoia o trabalho; o estudante continua responsável pelo julgamento e pelas decisões.'],
+    knowledge: ['Conhecimento exige contexto.', 'Sugestões da IA precisam ser compreendidas, verificadas e relacionadas a fontes confiáveis.'],
+    responsibility: ['Responsabilidade humana.', 'Autoria, privacidade, transparência e avaliação crítica orientam o uso da tecnologia.']
+  };
+  const aiSystem = document.getElementById('ai-system');
+  const aiInsight = document.getElementById('ai-insight');
+  let selectedConcept = '';
+  function showAiConcept(concept) {
+    const [title, text] = aiExplanations[concept] || ['IA amplia possibilidades.', 'Compreender, verificar e decidir continuam sendo responsabilidades humanas.'];
+    aiInsight.innerHTML = `<b>${title}</b><span>${text}</span>`;
+    aiSystem?.classList.toggle('has-focus', Boolean(concept));
+    aiSystem?.querySelectorAll('.ai-node').forEach((node) => {
+      const active = node.dataset.concept === concept;
+      node.classList.toggle('active', active);
+      node.setAttribute('aria-pressed', String(active && selectedConcept === concept));
+    });
+    aiSystem?.querySelectorAll('.ai-links path').forEach((path) => path.classList.toggle('active', path.dataset.link === concept));
+  }
+  aiSystem?.querySelectorAll('.ai-node').forEach((node) => {
+    const concept = node.dataset.concept;
+    node.addEventListener('pointerenter', () => showAiConcept(concept));
+    node.addEventListener('focus', () => showAiConcept(concept));
+    node.addEventListener('pointerleave', () => showAiConcept(selectedConcept));
+    node.addEventListener('blur', () => showAiConcept(selectedConcept));
+    node.addEventListener('click', () => {
+      selectedConcept = selectedConcept === concept ? '' : concept;
+      showAiConcept(selectedConcept);
+    });
+  });
+  aiSystem?.addEventListener('pointermove', (event) => {
+    if (event.pointerType !== 'mouse' || selectedConcept) return;
+    const rect = aiSystem.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - .5;
+    const y = (event.clientY - rect.top) / rect.height - .5;
+    aiSystem.style.setProperty('--tilt-x', `${-y * 3}deg`);
+    aiSystem.style.setProperty('--tilt-y', `${x * 3}deg`);
+  });
+  aiSystem?.addEventListener('pointerleave', () => { aiSystem.style.removeProperty('--tilt-x'); aiSystem.style.removeProperty('--tilt-y'); });
+
+  const partnerDetails = [
+    ['Projetos digitais internos', 'Desenvolver soluções digitais para necessidades institucionais, com escopo definido, revisão e acompanhamento.', 'Contribuição possível: protótipos, documentação ou melhorias acordadas.', 'Limite: acesso, publicação e uso definidos pela instituição.'],
+    ['Materiais institucionais', 'Organizar recursos e materiais que apoiem a comunicação e as atividades de aprendizagem.', 'Contribuição possível: pesquisa, estruturação e produção de materiais.', 'Limite: conteúdo revisado e aprovado antes de qualquer uso institucional.'],
+    ['Comunicação visual', 'Criar materiais consistentes com a identidade visual institucional.', 'Contribuição possível: propostas visuais para projetos e ações autorizadas.', 'Limite: publicação depende de revisão e aprovação institucional.'],
+    ['Mentoria e desafios', 'Explorar desafios orientados, receber feedback e desenvolver competências em ambiente supervisionado.', 'Contribuição possível: compartilhar contexto, orientar e oferecer devolutivas.', 'Limite: escopo transparente, acompanhamento e regras aplicáveis.']
+  ];
+  const partnerScene = document.querySelector('.partner-scene');
+  const partnerDetail = document.getElementById('partner-detail');
+  let selectedPartner = -1;
+  function selectPartner(index) {
+    selectedPartner = index;
+    partnerScene?.querySelectorAll('.partner-card').forEach((card) => {
+      const active = Number(card.dataset.partner) === index;
+      card.classList.toggle('selected', active);
+      card.setAttribute('aria-pressed', String(active));
+    });
+    partnerScene?.querySelectorAll('.partner-lines path').forEach((path) => path.classList.toggle('active', Number(path.dataset.link) === index));
+    if (index < 0) {
+      partnerDetail.classList.remove('open');
+      partnerDetail.innerHTML = '<b>Colaboração com propósito</b><span>Selecione uma área para explorar exemplos de contribuição, escopo e acompanhamento.</span><button type="button" data-partner-close aria-label="Fechar detalhes">×</button>';
+      return;
+    }
+    const [title, objective, contribution, boundary] = partnerDetails[index];
+    partnerDetail.innerHTML = `<b>${title}</b><p>${objective}</p><span><strong>Possibilidade:</strong> ${contribution}</span><span><strong>Limites:</strong> ${boundary}</span><button type="button" data-partner-close aria-label="Fechar detalhes">×</button>`;
+    partnerDetail.classList.add('open');
+  }
+  partnerScene?.querySelectorAll('.partner-card').forEach((card) => card.addEventListener('click', () => selectPartner(Number(card.dataset.partner))));
+  partnerDetail?.addEventListener('click', (event) => { if (event.target.closest('[data-partner-close]')) selectPartner(-1); });
+  document.querySelector('.partnership')?.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && selectedPartner >= 0) { const previous = selectedPartner; selectPartner(-1); partnerScene.querySelector(`[data-partner="${previous}"]`)?.focus(); }
+  });
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    partnerScene?.querySelectorAll('.partner-card').forEach((card) => {
+      card.addEventListener('pointermove', (event) => {
+        const rect = card.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - .5;
+        const y = (event.clientY - rect.top) / rect.height - .5;
+        card.style.setProperty('--card-x', `${-y * 4}deg`);
+        card.style.setProperty('--card-y', `${x * 4}deg`);
+      });
+      card.addEventListener('pointerleave', () => { card.style.removeProperty('--card-x'); card.style.removeProperty('--card-y'); });
+    });
+  }
+
+  const phaseInfo = [
+    ['Preparar uma base responsável', 'Alinhar público, áreas de atuação, regras, responsabilidades e recursos disponíveis.', 'Escuta inicial, escopo definido e responsabilidades documentadas.', 'Avançar quando houver condições, pessoas responsáveis e limites claros.'],
+    ['Testar em pequena escala', 'Realizar uma atividade piloto, como workshop ou hackathon, e recolher feedback.', 'Participação, aprendizados, feedback e pontos de melhoria observados.', 'Revisar aprendizados e capacidade antes de decidir os próximos passos.'],
+    ['Conectar recursos e pessoas', 'Organizar uma presença digital, calendário de atividades e comunidade moderada.', 'Acessibilidade dos recursos, qualidade das interações e necessidades de moderação.', 'Avançar conforme recursos, participação e acompanhamento forem sustentáveis.'],
+    ['Evoluir com evidências', 'Ampliar atividades, mentoria, portfólios e parcerias de forma gradual.', 'Experiências documentadas, competências desenvolvidas e feedback das pessoas envolvidas.', 'Revisar continuamente o que funciona e ajustar a proposta.']
+  ];
+  const roadmap = document.getElementById('roadmap-steps');
+  const roadmapDetail = document.getElementById('roadmap-detail');
+  let selectedPhase = 0;
+  function selectPhase(index) {
+    selectedPhase = index;
+    roadmap?.querySelectorAll('.roadmap-step').forEach((step) => {
+      const active = Number(step.dataset.phase) === index;
+      step.classList.toggle('selected', active);
+      step.setAttribute('aria-pressed', String(active));
+    });
+    const activePath = roadmap?.querySelector('.track-active');
+    if (activePath) activePath.style.strokeDasharray = `${[18, 41, 68, 100][index]} 100`;
+    const [title, activity, evidence, criteria] = phaseInfo[index];
+    roadmapDetail.innerHTML = `<div><small>FASE ${String(index + 1).padStart(2, '0')} · EXEMPLO</small><b>${title}</b></div><p><strong>Atividade:</strong> ${activity}</p><p><strong>Evidências a acompanhar:</strong> ${evidence}</p><p><strong>Critério ilustrativo:</strong> ${criteria}</p>`;
+  }
+  roadmap?.querySelectorAll('.roadmap-step').forEach((step) => {
+    const index = Number(step.dataset.phase);
+    step.addEventListener('click', () => selectPhase(index));
+    step.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); event.stopPropagation(); selectPhase(index); }
+    });
+  });
+  selectPhase(0);
+
   document.addEventListener('keydown', (event) => {
     if (isTypingTarget(event.target) || event.altKey || event.ctrlKey || event.metaKey) return;
     if (event.key === 'ArrowRight' || event.key === ' ' || event.key === 'PageDown') {
