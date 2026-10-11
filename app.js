@@ -103,23 +103,6 @@
   });
   dashboard?.addEventListener('pointerleave', () => { dashboard.style.transform = ''; });
 
-  document.querySelectorAll('[data-photo-card]').forEach((card) => {
-    const fileInput = card.querySelector('.photo-frame input[type="file"]');
-    const preview = card.querySelector('.photo-preview');
-    const uploadButton = card.querySelector('.photo-upload');
-    uploadButton.addEventListener('click', () => fileInput.click());
-    fileInput.addEventListener('change', () => {
-      const file = fileInput.files?.[0];
-      if (!file || !file.type.startsWith('image/')) return;
-      if (card.dataset.objectUrl) URL.revokeObjectURL(card.dataset.objectUrl);
-      card.dataset.objectUrl = URL.createObjectURL(file);
-      preview.src = card.dataset.objectUrl;
-      preview.alt = `Foto adicionada: ${file.name}`;
-      preview.style.objectPosition = card.dataset.position || 'center';
-      card.classList.add('has-photo');
-      uploadButton.textContent = 'TROCAR FOTOGRAFIA';
-    });
-  });
   document.addEventListener('keydown', (event) => {
     if (isTypingTarget(event.target) || event.altKey || event.ctrlKey || event.metaKey) return;
     if (event.key === 'ArrowRight' || event.key === ' ' || event.key === 'PageDown') {
