@@ -74,6 +74,38 @@
     });
   });
 
+  const network = document.getElementById('ias-network');
+  let selectedEcoNode = '';
+  function highlightEcoNode(nodeName) {
+    network?.classList.toggle('network-engaged', Boolean(nodeName));
+    network?.querySelectorAll('.eco-node').forEach((node) => {
+      const active = node.dataset.ecoNode === nodeName;
+      node.classList.toggle('connected', active);
+      node.setAttribute('aria-pressed', String(active && selectedEcoNode === nodeName));
+    });
+    network?.querySelectorAll('.eco-network [data-connection]').forEach((path) => {
+      path.classList.toggle('active', path.dataset.connection === nodeName);
+    });
+  }
+  network?.querySelectorAll('.eco-node').forEach((node) => {
+    const name = node.dataset.ecoNode;
+    node.addEventListener('pointerenter', () => highlightEcoNode(name));
+    node.addEventListener('pointerleave', () => highlightEcoNode(selectedEcoNode));
+    node.addEventListener('focus', () => highlightEcoNode(name));
+    node.addEventListener('blur', () => highlightEcoNode(selectedEcoNode));
+    node.addEventListener('click', () => {
+      selectedEcoNode = selectedEcoNode === name ? '' : name;
+      highlightEcoNode(selectedEcoNode);
+    });
+    node.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        event.stopPropagation();
+        node.click();
+      }
+    });
+  });
+
   const dashboard = document.getElementById('platform-card');
   function demoPage(page) {
     demoState.page = page;
