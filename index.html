@@ -111,9 +111,9 @@
 @media(prefers-reduced-motion:reduce){.dashboard,.demo-tab,.demo-feature,.demo-item{transition:none}.platform.active .dashboard{animation:none;opacity:1;transform:none}}
 .workshop-facts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}.workshop-facts>div{min-width:0;padding:11px;border:1px solid rgba(92,154,196,.2);border-radius:6px;background:linear-gradient(135deg,rgba(255,255,255,.92),rgba(236,245,249,.72));box-shadow:0 8px 18px rgba(21,58,83,.06);backdrop-filter:blur(10px)}.workshop-facts>div:last-child{grid-column:1/3}.workshop-facts small{display:block;margin-bottom:6px;color:#5c82a0;font:700 6px var(--sans);letter-spacing:.11em}.workshop-facts b{display:block;color:#29485e;font:9px/1.4 var(--sans)}.workshop-rules{margin-top:9px;padding:12px}.workshop-rules ol{margin:7px 0 0}
 /* Photo cards: dark glass, restrained LED and cursor driven tilt */
-.photo-card,.photo-card:nth-of-type(2){position:relative;isolation:isolate;overflow:hidden;border:1px solid rgba(72,174,239,.48);border-radius:12px;background:linear-gradient(145deg,#0b2d58,#061b3f 74%);box-shadow:0 18px 42px rgba(5,23,50,.24),0 0 0 1px rgba(174,221,249,.08),0 0 17px rgba(56,189,248,.12);transform:perspective(1100px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg)) rotateZ(var(--tilt-z,-1deg));transform-style:preserve-3d;transition:transform .42s cubic-bezier(.2,.72,.2,1),box-shadow .42s,border-color .42s}.photo-card:before{content:"";position:absolute;z-index:3;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(135deg,rgba(110,206,255,.78),rgba(87,173,226,.12) 34%,rgba(70,166,231,.5) 72%,rgba(142,221,255,.65));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.52;pointer-events:none;transition:opacity .35s}.photo-card:after{content:"";position:absolute;z-index:2;inset:-35% -55%;background:linear-gradient(105deg,transparent 42%,rgba(171,224,255,.13) 49%,transparent 56%);transform:translateX(-55%);transition:transform .7s;pointer-events:none}.photo-card:hover,.photo-card:focus-within{z-index:4;border-color:rgba(95,199,255,.9);transform:perspective(1100px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg)) rotateZ(0deg) translateY(-6px);box-shadow:0 28px 56px rgba(3,17,39,.38),0 0 0 1px rgba(109,203,255,.24),0 0 23px rgba(56,189,248,.27)}.photo-card:hover:before,.photo-card:focus-within:before{opacity:1}.photo-card:hover:after{transform:translateX(55%)}.photo-card .photo-frame{isolation:isolate;overflow:hidden;border-radius:10px 10px 0 0;background:#092347;transform:translateZ(14px)}.photo-card .photo-frame:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,20,43,.02) 55%,rgba(4,20,43,.24));pointer-events:none}.photo-card .photo-image{transition:transform .65s cubic-bezier(.2,.72,.2,1),filter .4s}.photo-card:hover .photo-image{transform:scale(1.045);filter:saturate(1.05)}.photo-details{position:relative;z-index:1;align-content:start;gap:11px;padding:clamp(16px,2vw,25px);background:linear-gradient(145deg,rgba(12,43,79,.94),rgba(5,24,53,.98));backdrop-filter:blur(12px);transform:translateZ(10px)}.photo-heading small{color:#8ccff2}.photo-heading h3{color:#f0f7fb}.photo-details p{color:rgba(232,242,248,.81);font-size:clamp(11px,.9vw,13px);line-height:1.52}.portfolio.active .photo-card{animation:photoReveal .65s ease-out both}.portfolio.active .photo-card:nth-child(2){animation-delay:.16s}@keyframes photoReveal{from{opacity:0}to{opacity:1}}.photo-card:focus-visible{outline:2px solid #60a5fa;outline-offset:4px}
-@media(max-width:650px){.photo-card,.photo-card:nth-of-type(2){transform:none}.photo-card:hover,.photo-card:focus-within{transform:translateY(-3px)}.photo-card .photo-frame{transform:none}.photo-details{padding:16px}.photo-details p{font-size:12px}.workshop-facts{grid-template-columns:1fr}.workshop-facts>div:last-child{grid-column:1}}
-@media(prefers-reduced-motion:reduce){.photo-card,.photo-card:before,.photo-card:after,.photo-image{transition:none!important;animation:none!important}.photo-card:hover,.photo-card:focus-within{transform:none}.portfolio.active .photo-card{animation:none;opacity:1}}
+.photo-card,.photo-card:nth-of-type(2){position:relative;isolation:isolate;overflow:hidden;border:1px solid rgba(72,174,239,.48);border-radius:12px;background:linear-gradient(145deg,#0b2d58,#061b3f 74%);box-shadow:0 18px 42px rgba(5,23,50,.24),0 0 0 1px rgba(174,221,249,.08),0 0 17px rgba(56,189,248,.12);transform:perspective(1100px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg)) rotateZ(var(--tilt-z,-1deg));backface-visibility:hidden;-webkit-backface-visibility:hidden;transition:transform .25s ease-out,box-shadow .25s ease-out,border-color .25s ease-out}.photo-card:before{content:"";position:absolute;z-index:3;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(135deg,rgba(110,206,255,.78),rgba(87,173,226,.12) 34%,rgba(70,166,231,.5) 72%,rgba(142,221,255,.65));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.52;pointer-events:none;transition:opacity .25s ease-out}.photo-card:after{content:"";position:absolute;z-index:2;inset:-35% -55%;background:linear-gradient(105deg,transparent 42%,rgba(171,224,255,.13) 49%,transparent 56%);transform:translateX(-55%);transition:transform .5s ease-out;pointer-events:none}.photo-card:hover,.photo-card:focus-within{z-index:4;border-color:rgba(95,199,255,.9);transform:perspective(1100px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg)) rotateZ(0deg) translateY(-4px);box-shadow:0 24px 48px rgba(3,17,39,.36),0 0 0 1px rgba(109,203,255,.22),0 0 20px rgba(56,189,248,.24)}.photo-card:hover:before,.photo-card:focus-within:before{opacity:1}.photo-card:hover:after{transform:translateX(55%)}.photo-card .photo-frame{position:relative;isolation:isolate;overflow:hidden;border-radius:10px 10px 0 0;background:#092347;z-index:1}.photo-card .photo-frame:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,20,43,.02) 55%,rgba(4,20,43,.24));pointer-events:none;z-index:2}.photo-card .photo-image{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:center;transition:transform .4s ease-out,filter .3s ease-out;z-index:1}.photo-card:hover .photo-image{transform:scale(1.03);filter:saturate(1.04)}.photo-details{position:relative;z-index:5;align-content:start;gap:11px;padding:clamp(16px,2vw,25px);background:linear-gradient(145deg,rgba(12,43,79,.94),rgba(5,24,53,.98));backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);will-change:auto}.photo-heading small{color:#8ccff2}.photo-heading h3{color:#f0f7fb}.photo-details p{color:rgba(232,242,248,.81);font-size:clamp(11px,.9vw,13px);line-height:1.52}.portfolio.active .photo-card{animation:photoReveal .5s ease-out both}.portfolio.active .photo-card:nth-child(2){animation-delay:.12s}@keyframes photoReveal{from{opacity:0}to{opacity:1}}.photo-card:focus-visible{outline:2px solid #60a5fa;outline-offset:4px}
+@media(max-width:650px){.photo-card,.photo-card:nth-of-type(2){transform:none;-webkit-tap-highlight-color:transparent}.photo-card:hover,.photo-card:focus-within{transform:translateY(-3px)}.photo-details{padding:16px}.photo-details p{font-size:12px}.workshop-facts{grid-template-columns:1fr}.workshop-facts>div:last-child{grid-column:1}}
+@media(prefers-reduced-motion:reduce){.photo-card,.photo-card:before,.photo-card:after,.photo-image,.photo-details{transition:none!important;animation:none!important;transform:none!important}.photo-card:hover,.photo-card:focus-within{transform:none!important}.portfolio.active .photo-card{animation:none;opacity:1}}
 /* Three redesigned institutional slides */
 .ai{grid-template-columns:.95fr 1.05fr;grid-template-rows:minmax(0,1fr) auto auto;column-gap:3vw;background:radial-gradient(ellipse at 76% 48%,rgba(48,130,207,.2),transparent 34%),radial-gradient(ellipse at 17% 16%,rgba(164,205,239,.07),transparent 32%),linear-gradient(125deg,#041a3e,#082b68 65%,#061d47)}.ai .section-head{grid-column:1;grid-row:1}.ai .section-head h2{font-size:clamp(40px,4.8vw,70px);max-width:690px}.ai .section-head h2 em{color:#c4dcf1}.ai .section-head .support{max-width:510px}.ai-visual{grid-column:2;grid-row:1;width:min(38vw,470px);height:min(43vh,440px);min-width:300px;min-height:300px;perspective:1000px;transform:perspective(1000px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg));transform-style:preserve-3d;transition:transform .35s}.ai-links{position:absolute;inset:0;width:100%;height:100%;z-index:1;overflow:visible}.ai-links path{fill:none;stroke:rgba(135,196,241,.21);stroke-width:1.1;stroke-dasharray:4 7;transition:stroke .35s,stroke-width .35s,filter .35s}.ai-links path.active{stroke:#71caff;stroke-width:2;filter:drop-shadow(0 0 5px rgba(56,189,248,.8));stroke-dasharray:7 5}.ai-orbit{z-index:0;width:86%;height:76%;border-color:rgba(169,211,244,.32);animation:aiOrbit 24s linear infinite}.orbit-two{width:62%;height:106%;animation:aiOrbitReverse 30s linear infinite}.orbit-three{width:101%;height:48%;border-color:rgba(113,185,233,.18);transform:rotateX(72deg) rotateY(-22deg) rotateZ(31deg);animation:aiOrbit 36s linear infinite}.ai-core{width:clamp(104px,10vw,142px);height:clamp(104px,10vw,142px);border-color:rgba(163,218,255,.72);background:radial-gradient(circle at 38% 30%,rgba(139,202,244,.45),rgba(8,43,104,.69) 75%);box-shadow:0 0 46px rgba(56,151,225,.28),inset 0 0 26px rgba(255,255,255,.11);animation:corePulse 4.8s ease-in-out infinite}.ai-core span{font-size:42px;text-shadow:0 0 25px rgba(155,216,255,.65)}.ai-node{z-index:4;appearance:none;cursor:pointer;font-family:var(--sans);transition:transform .3s,box-shadow .3s,border-color .3s,color .3s}.ai-node:hover,.ai-node:focus-visible,.ai-node.active{transform:translateY(-3px) scale(1.04);border-color:#60bdf5;box-shadow:0 0 22px rgba(56,189,248,.26),inset 0 0 17px rgba(56,189,248,.08);color:#fff}.ai-node:focus-visible{outline:2px solid #8ed5ff;outline-offset:4px}.ai-person{left:-2%;top:30%}.ai-knowledge{right:-5%;bottom:24%}.ai-responsibility{position:absolute;left:40%;top:1%;display:flex;align-items:center;gap:7px;padding:9px 12px;border-radius:22px;border:1px solid rgba(199,221,240,.24);background:rgba(7,37,87,.92);color:#d9e7f3;font-size:7px;letter-spacing:.1em}.ai-responsibility span{font-size:13px;color:#b9d5ed}.ai-label{z-index:3;text-shadow:0 0 12px rgba(137,206,248,.4)}.ai-spark{position:absolute;z-index:2;width:5px;height:5px;border-radius:50%;background:#b8e5ff;box-shadow:0 0 13px #38bdf8;animation:sparkDrift 6s ease-in-out infinite}.spark-one{left:20%;top:17%}.spark-two{right:21%;bottom:16%;animation-delay:-3s}.ai-insight{grid-column:2;grid-row:2;justify-self:center;width:min(100%,470px);padding:12px 16px;border:1px solid rgba(160,211,244,.2);border-radius:8px;background:rgba(5,28,65,.64);box-shadow:0 15px 36px rgba(0,0,0,.16);backdrop-filter:blur(12px);display:flex;flex-direction:column;gap:5px;min-height:58px;animation:softReveal .45s ease-out}.ai-insight b{font:16px var(--serif);color:#eaf6ff}.ai-insight span{font-size:9px;line-height:1.45;color:rgba(234,246,255,.72)}.ai-system.has-focus .ai-orbit{opacity:.48}.ai-principles{grid-column:1/3;grid-row:3;margin-top:10px}.ai-principles span{transition:border-color .25s,background .25s}.ai-principles span:hover{border-color:rgba(114,196,246,.48);background:rgba(93,164,215,.16)}@keyframes aiOrbit{to{rotate:360deg}}@keyframes aiOrbitReverse{to{rotate:-360deg}}@keyframes corePulse{0%,100%{box-shadow:0 0 38px rgba(56,151,225,.24),inset 0 0 22px rgba(255,255,255,.08)}50%{box-shadow:0 0 57px rgba(56,151,225,.39),inset 0 0 30px rgba(255,255,255,.15)}}@keyframes sparkDrift{0%,100%{transform:translate(0,0);opacity:.48}50%{transform:translate(8px,-10px);opacity:1}}
 .partnership{padding-top:clamp(72px,8.5vh,96px);background:radial-gradient(ellipse at 50% 62%,rgba(119,167,196,.12),transparent 48%),var(--ivory)}.partnership .section-head h2{font-size:clamp(39px,4.5vw,65px)}.partner-scene{height:clamp(220px,27vh,290px);margin-top:3px;perspective:1200px}.partner-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible;transform:none}.partner-lines path{fill:none;stroke:#aebfc8;stroke-width:1.2;stroke-dasharray:5 7;transition:stroke .3s,stroke-width .3s,filter .3s}.partner-lines path.active{stroke:#38a9e4;stroke-width:2.5;filter:drop-shadow(0 0 4px rgba(56,189,248,.72));stroke-dasharray:8 5}.partner-hub{width:160px;height:160px;background:linear-gradient(145deg,rgba(255,255,255,.96),rgba(231,239,241,.87));border-color:rgba(104,138,157,.38);box-shadow:0 22px 50px rgba(8,43,104,.16),0 0 32px rgba(103,176,220,.12);backdrop-filter:blur(9px);animation:hubFloat 5s ease-in-out infinite}.partner-hub img{box-shadow:0 0 0 7px rgba(8,43,104,.06),0 5px 15px rgba(8,43,104,.14)}.partner-card{appearance:none;text-align:left;cursor:pointer;border-radius:8px;background:linear-gradient(145deg,rgba(255,255,255,.96),rgba(246,248,243,.91));border-color:rgba(154,174,184,.52);transform:perspective(900px) rotateX(var(--card-x,0deg)) rotateY(var(--card-y,0deg));transform-style:preserve-3d;transition:transform .32s cubic-bezier(.2,.72,.2,1),box-shadow .32s,border-color .32s,background .32s}.partner-card:after{content:"";position:absolute;left:14px;right:14px;bottom:-1px;height:2px;background:linear-gradient(90deg,transparent,#38bdf8,transparent);transform:scaleX(0);transform-origin:center;transition:transform .35s;filter:drop-shadow(0 0 4px #38bdf8)}.partner-card:hover,.partner-card:focus-visible,.partner-card.selected{z-index:4;border-color:#62b6e6;transform:perspective(900px) rotateX(var(--card-x,0deg)) rotateY(var(--card-y,0deg)) translateY(-5px) translateZ(12px);box-shadow:0 18px 36px rgba(8,43,104,.17),0 0 19px rgba(56,189,248,.18)}.partner-card:hover:after,.partner-card:focus-visible:after,.partner-card.selected:after{transform:scaleX(1)}.partner-card:focus-visible{outline:2px solid #288fca;outline-offset:3px}.partner-card i{transition:transform .3s,color .3s}.partner-card:hover i,.partner-card.selected i{transform:translateZ(16px) scale(1.16);color:#248ac0}.partner-card span{color:#52738c}.partner-detail{position:relative;min-height:58px;margin:0 auto 14px;padding:10px 42px 10px 15px;max-width:850px;border:1px solid rgba(119,157,177,.28);border-radius:7px;background:rgba(255,255,255,.55);display:grid;grid-template-columns:170px 1fr;gap:5px 18px;align-items:center;transition:background .3s,border-color .3s,box-shadow .3s;backdrop-filter:blur(8px)}.partner-detail>b{grid-row:span 2;font:16px var(--serif);color:#173b60}.partner-detail>span{font-size:8px;line-height:1.4;color:#607688}.partner-detail p{grid-column:2;margin:0;font-size:9px;line-height:1.4;color:#3f5d74}.partner-detail.open{border-color:rgba(56,157,213,.48);background:rgba(255,255,255,.78);box-shadow:0 12px 30px rgba(8,43,104,.09),0 0 16px rgba(56,189,248,.1);animation:softReveal .32s ease-out}.partner-detail button{position:absolute;right:9px;top:8px;width:25px;height:25px;border:1px solid #c6d5db;border-radius:50%;background:rgba(255,255,255,.65);color:#355775;font-size:18px;cursor:pointer}.partner-detail button:focus-visible{outline:2px solid #288fca}.guardrails{padding-top:11px}.guardrails span{color:#526c7d}
@@ -343,7 +343,81 @@
 @media(max-height:760px) and (min-width:901px){.slide.cover{padding-top:70px;padding-bottom:62px;gap:clamp(24px,4vw,54px)}.cover-copy{gap:clamp(12px,1.4vh,18px)}.cover h1{font-size:clamp(45px,6vw,88px)}.cover-visual{aspect-ratio:1.7}}
 @media(max-width:900px){.slide.cover{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto;align-content:center;gap:clamp(20px,3vh,32px);padding-top:82px;padding-bottom:88px}.cover-copy{grid-column:1;grid-row:1}.cover-visual{grid-column:1;grid-row:2;width:min(100%,380px);aspect-ratio:1.55}.cover-mark{width:min(100%,360px)}}
 @media(max-width:650px){.slide.cover{padding:76px 24px 86px;gap:16px;overflow-y:auto}.cover-copy{gap:12px}.cover .eyebrow{font-size:8px}.cover h1{font-size:clamp(34px,9.2vw,58px)}.cover .lead{font-size:13px}.cover-rule{font-size:7px;letter-spacing:.1em}.cover-visual{width:min(100%,290px);aspect-ratio:1.55}.cover-mark{width:min(100%,280px)}}
-  </style>
+
+/* Final targeted fixes for slides 01, 07, 08 and 09. */
+/* 01: transparent logo artwork only; no glass card or orbit container. */
+.slide.cover{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:center;gap:clamp(32px,5vw,80px)}
+.cover-visual{overflow:visible;aspect-ratio:auto;min-height:0;perspective:none;isolation:isolate;background:radial-gradient(ellipse at 50% 52%,rgba(96,174,231,.2),transparent 68%)}
+.cover-visual:before{content:"";position:absolute;z-index:0;inset:8% 2%;background:radial-gradient(ellipse,rgba(82,158,220,.18),transparent 70%);filter:blur(18px);pointer-events:none}
+.cover-logo{position:relative;z-index:1;display:block;width:min(100%,440px);max-width:100%;height:auto;object-fit:contain;filter:drop-shadow(0 18px 34px rgba(0,8,29,.2)) drop-shadow(0 0 20px rgba(112,190,239,.12))}
+@media(max-width:900px){.cover-visual{width:min(100%,380px);aspect-ratio:auto}.cover-logo{width:min(100%,360px)}}
+@media(max-width:650px){.cover-visual{width:min(100%,290px)}.cover-logo{width:min(100%,280px)}}
+/* 07: equal-height columns and an SVG-like line centered in the circle grid column. */
+.teaching{gap:16px}
+.teaching-head{align-items:flex-end}
+.teaching-head .support{margin-left:auto;margin-right:0;max-width:370px}
+.teaching-main{grid-template-columns:minmax(205px,.72fr) minmax(0,1.65fr);align-items:stretch;gap:clamp(14px,2.5vw,34px);flex:1;min-height:0}
+.teaching-flow{--step-inset:8px;--step-size:34px;--connector-top:0px;--connector-bottom:0px;--progress-height:0px;display:flex;flex-direction:column;justify-content:stretch;align-self:stretch;gap:6px;height:100%;min-height:0;padding:0;overflow:visible}
+.teaching-flow:before,.teaching-flow:after{content:"";position:absolute;z-index:0;left:var(--step-inset);top:var(--connector-top);bottom:var(--connector-bottom);width:var(--step-size);height:auto;border:0;border-radius:0;pointer-events:none;background:linear-gradient(to right,transparent calc(50% - 1px),rgba(141,194,228,.22) calc(50% - 1px),rgba(141,194,228,.22) calc(50% + 1px),transparent calc(50% + 1px))}
+.teaching-flow:after{top:var(--connector-top);bottom:auto;height:var(--progress-height);background:linear-gradient(to right,transparent calc(50% - 1px),#8dd8ff calc(50% - 1px),#8dd8ff calc(50% + 1px),transparent calc(50% + 1px));filter:drop-shadow(0 0 4px rgba(115,210,255,.5))}
+.teaching-flow li{display:flex;flex:1 1 0;min-height:0;position:relative;z-index:1;padding:0;border:0;background:transparent;backdrop-filter:none;animation:none!important}
+.stage-step{display:grid;width:100%;height:100%;min-height:0;flex:1;grid-template-columns:var(--step-size) minmax(0,1fr);gap:10px;align-items:center;padding:4px 8px 4px var(--step-inset);position:relative;z-index:1;transform:none!important;transition:border-color .2s,background-color .2s,box-shadow .2s}
+.stage-step:hover,.stage-step:focus:not(:focus-visible){transform:none!important}
+.stage-step i{box-sizing:border-box;width:var(--step-size);height:var(--step-size);flex:0 0 var(--step-size);position:relative;z-index:2;background:#082b55!important;background-image:linear-gradient(145deg,#0b315f,#08264f)!important;border:1px solid rgba(201,222,240,.55);box-shadow:inset 0 1px rgba(255,255,255,.16);opacity:1}
+.stage-step.is-complete i{background:#287db4!important;background-image:linear-gradient(145deg,#9de0fa,#4f9bd0)!important}
+.stage-step.flow-current i{background:#347fb8!important;background-image:linear-gradient(145deg,#b9e9fb,#71acd8)!important}
+.stage-step i:after{content:none!important}
+.stage-check{display:none;width:15px;height:15px;place-self:center;overflow:visible;fill:none;stroke:#082849;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.stage-step.is-complete .stage-number{display:none}.stage-step.is-complete .stage-check{display:block}.stage-step.flow-current .stage-number{display:block;opacity:1}.stage-step.flow-current .stage-check{display:none}.stage-step:not(.is-complete):not(.flow-current) .stage-number{opacity:.68}
+.weekly-calendar{align-self:stretch;height:auto;min-height:0;max-height:none}
+.stage-panel-content{overflow:visible;max-height:none}
+@media(max-width:900px) and (min-width:651px){.teaching-main{grid-template-columns:minmax(175px,.65fr) minmax(0,1.55fr);gap:14px}.teaching-flow{--step-inset:6px;--step-size:32px}.stage-step{gap:7px}}
+@media(max-width:650px){.teaching{gap:14px}.teaching-main{display:flex;flex-direction:column;align-items:stretch;flex:none}.teaching-flow{display:grid;grid-template-columns:1fr 1fr;height:auto;gap:9px 12px;overflow:visible}.teaching-flow:before,.teaching-flow:after{display:none}.teaching-flow li{display:flex;min-height:38px}.stage-step{height:auto;min-height:38px;grid-template-columns:28px minmax(0,1fr);padding:3px 5px;gap:5px}.stage-step i{width:28px;height:28px;flex-basis:28px}.weekly-calendar{height:auto;min-height:clamp(245px,38svh,320px)}}
+/* Same centerline for all seven steps; recalculated on resize and stage change. */
+/* Shared heading row aligns the step 01 seal and step 05 arrow with their titles. */
+.stage-card-title-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:18px;margin-top:10px}
+.stage-card-title-row h4{min-width:0;margin:0;padding-right:8px}
+.course-card .course-seal,.published-card .published-icon{position:relative;inset:auto;right:auto;top:auto;flex:none;margin:0}
+.course-seal{width:78px;height:78px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;font-size:27px}
+.course-seal small{position:static;display:block;font-size:7px;line-height:1.15;letter-spacing:.1em;text-align:center;white-space:nowrap}
+.course-card h4{max-width:none;margin:0}
+.published-card h4{max-width:none;margin:0;font-size:clamp(20px,2.2vw,29px)}
+.published-icon{width:52px;height:52px}
+/* 08: cards are informational and remain visually stable after clicks. */
+.project-journey{grid-template-rows:auto;gap:0}
+.journey-steps{align-items:stretch}
+.journey-card{height:184px;min-height:184px;display:flex;flex-direction:column;align-items:flex-start;user-select:none;-webkit-tap-highlight-color:transparent;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.journey-card h3{min-height:2.3em;display:flex;align-items:flex-end}
+.journey-card:hover{transform:translateY(-2px);border-color:rgba(144,211,248,.42);box-shadow:0 20px 42px rgba(0,7,26,.29),0 0 12px rgba(68,174,230,.08),inset 0 1px rgba(255,255,255,.15)}
+.journey-card:active{transform:translateY(-2px);border-color:rgba(144,211,248,.42);box-shadow:0 20px 42px rgba(0,7,26,.29),0 0 12px rgba(68,174,230,.08),inset 0 1px rgba(255,255,255,.15)}
+.journey-card.selected{transform:none;background:linear-gradient(145deg,rgba(15,52,96,.91),rgba(7,34,75,.84));color:#edf5fa;border-color:rgba(181,219,243,.2)}
+.journey-card:before{opacity:.45!important}
+.journey-card:focus-visible{transform:none;border-color:rgba(181,219,243,.2);box-shadow:0 18px 38px rgba(0,7,26,.24),inset 0 1px rgba(255,255,255,.15)}
+.journey-card:focus:not(:focus-visible){outline:none}
+.journey-card:focus-visible{outline:2px solid #a4ddff;outline-offset:3px}
+.journey-card .step-number{right:15px;top:14px;text-align:right}
+.journey-card .step-icon{left:15px;top:15px}
+.journey-card h3,.journey-card p{position:relative;z-index:2}
+.journey-detail{display:none!important}
+.partnership .guardrails span{color:rgba(222,239,249,.78)}
+@media(max-width:650px){.journey-card{height:auto;min-height:148px}.journey-card h3{min-height:2.3em}}
+/* 09: static cards and fixed “Testar” panel; decorative track stays behind all content. */
+.roadmap-steps{align-items:stretch}
+.roadmap-track{z-index:0;pointer-events:none}
+.roadmap-step{z-index:2;min-height:184px;user-select:none;-webkit-tap-highlight-color:transparent;cursor:default;opacity:1!important;filter:none!important;transform:none!important;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.roadmap-step:hover{transform:translateY(-2px)!important;border-color:rgba(181,219,243,.3);box-shadow:0 20px 40px rgba(0,7,26,.27),inset 0 1px rgba(255,255,255,.16)}
+.roadmap-step:active{transform:translateY(-2px)!important;border-color:rgba(181,219,243,.3);box-shadow:0 20px 40px rgba(0,7,26,.27),inset 0 1px rgba(255,255,255,.16)}
+.roadmap-step.selected{transform:none!important;border-color:rgba(181,219,243,.2);box-shadow:0 18px 38px rgba(0,7,26,.24),inset 0 1px rgba(255,255,255,.15)}
+.roadmap-step:focus:not(:focus-visible){outline:none}.roadmap-step:focus-visible{outline:2px solid #a4ddff;outline-offset:3px}
+.roadmap-step>span{position:relative;z-index:4;display:block;padding:0;background:transparent!important;color:#a8cbe5}
+.roadmap-step .roadmap-symbol{z-index:4;flex:0 0 50px;margin:11px 0 12px;background:#092956!important;background-image:linear-gradient(145deg,#1d4d7d,#08234d)!important;border-color:rgba(179,224,250,.66)!important;color:#d8f2ff!important;box-shadow:0 0 0 5px rgba(4,27,64,.96),0 10px 22px rgba(0,5,22,.3),inset 0 1px rgba(255,255,255,.32)!important;transform:none!important;animation:none!important}
+.roadmap-symbol svg{stroke:#d2efff;stroke-width:1.5}
+.roadmap-step h3,.roadmap-step p,.roadmap-step small{position:relative;z-index:4}
+.roadmap.active .roadmap-step{animation:none!important}
+.roadmap-detail{opacity:1;transform:none;animation:none}
+.measure-note{align-items:center}
+@media(max-width:650px){.roadmap-step{min-height:148px}.roadmap.active .roadmap-step{animation:none!important}}
+</style>
 </head>
 <body>
   <main class="stage" id="presentation" aria-label="Apresentação do Instituto de Aprendizado Social">
@@ -353,7 +427,7 @@
     <div class="slides" id="slides" aria-live="polite">
       <section class="slide cover dark" data-chapter="VISÃO INSTITUCIONAL">
         <div class="cover-copy"><p class="eyebrow">INSTITUTO DE APRENDIZADO SOCIAL</p><h1><span class="cover-word">Conhecimento</span><br><em>em movimento.</em></h1><p class="lead">Transformando aprendizagem em experiência — e experiência em possibilidades.</p><div class="cover-rule"><span></span><small>UMA JORNADA PARA APRENDER, PRATICAR E DEMONSTRAR</small></div></div>
-        <div class="cover-visual" aria-hidden="true"><div class="mark-orbit"></div><div class="cover-mark"><img src="imgs/logo-escuro.png" alt=""></div></div>
+        <div class="cover-visual"><img class="cover-logo" src="imgs/logo-capa-transparente.png" alt="Logotipo I.A.S. com símbolo do livro e assinatura do Instituto"></div>
         <div class="cover-index">PROPOSTA<br><strong>2026</strong></div>
       </section>
       <section class="slide question dark" data-chapter="O PONTO DE PARTIDA">
@@ -426,25 +500,25 @@
               <circle class="journey-light" r="4"><animateMotion dur="11s" repeatCount="indefinite"><mpath href="#journeyPath"/></animateMotion></circle>
             </svg>
             <div class="journey-steps">
-              <button class="journey-card selected" type="button" data-step="0" aria-pressed="true" tabindex="0">
+              <button class="journey-card" type="button">
                 <span class="step-number">01</span>
                 <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 4.5h8M9 3h6v3H9zM6 5.5h-2v15h16v-15h-2M8 10h8M8 14h8M8 18h5"/></svg></span>
                 <h3>Demanda</h3>
                 <p>A instituição ou um parceiro propõe um projeto real.</p>
               </button>
-              <button class="journey-card" type="button" data-step="1" aria-pressed="false" tabindex="0">
+              <button class="journey-card" type="button">
                 <span class="step-number">02</span>
                 <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 17.5 17.5 4l3 3L7 20.5H4zM13.5 8l2.5 2.5M10.5 11l2.5 2.5M7.5 14l2.5 2.5"/></svg></span>
                 <h3>Escopo</h3>
                 <p>Objetivo, prazo e limites definidos antes de começar.</p>
               </button>
-              <button class="journey-card" type="button" data-step="2" aria-pressed="false" tabindex="0">
+              <button class="journey-card" type="button">
                 <span class="step-number">03</span>
                 <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3.5 19v-1.5a5.5 5.5 0 0 1 11 0V19zM16 5h4v9h-4zM17.5 8h1M17.5 11h1M16 19l2-2 2 2"/></svg></span>
                 <h3>Execução supervisionada</h3>
                 <p>O aluno desenvolve com apoio de um orientador.</p>
               </button>
-              <button class="journey-card" type="button" data-step="3" aria-pressed="false" tabindex="0">
+              <button class="journey-card" type="button">
                 <span class="step-number">04</span>
                 <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 7h14v13H5zM8 7V4h8v3M8 12h8M8 16h4M15 16l1.5 1.5L20 14"/></svg></span>
                 <h3>Entrega e registro</h3>
@@ -452,7 +526,6 @@
               </button>
             </div>
           </div>
-          <div class="journey-detail" id="journey-detail" aria-live="polite"></div>
         </div>
         <div class="areas-section">
           <div class="areas-chips" role="group" aria-label="Áreas de atuação">
@@ -467,7 +540,7 @@
       </section>
       <section class="slide roadmap light" data-chapter="COMEÇAR COM INTENÇÃO">
         <div class="section-head"><p class="eyebrow">NA PLATAFORMA · DO PLANO À PRÁTICA</p><h2>Pequeno no início.<br><em>Guiado pelo aprendizado.</em></h2><p class="support">Na plataforma, o estudante planeja um projeto para a própria comunidade, coloca em prática em um workshop ou hackathon e usa o feedback para evoluir.</p></div>
-        <div class="roadmap-steps" id="roadmap-steps"><svg class="roadmap-track" viewBox="0 0 1000 130" preserveAspectRatio="none" aria-hidden="true"><path class="track-base" id="roadmapPath" d="M20 64 C135 64 135 24 260 24 S385 104 500 64 S635 24 750 24 S865 64 980 64"/><path class="track-active" d="M20 64 C135 64 135 24 260 24 S385 104 500 64 S635 24 750 24 S865 64 980 64" pathLength="100"/><circle class="roadmap-light" r="4"><animateMotion dur="13s" repeatCount="indefinite"><mpath href="#roadmapPath"/></animateMotion></circle></svg><article class="roadmap-step selected" data-phase="0" tabindex="0" role="button" aria-pressed="true"><span>FASE 01</span><div class="roadmap-symbol" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5M8 10.5h5M10.5 8v5"/></svg></div><h3>Planejar</h3><p>Definir o projeto, o público da comunidade, objetivos, regras e recursos.</p><small>ESCUTA + PREPARAÇÃO</small></article><article class="roadmap-step" data-phase="1" tabindex="0" role="button" aria-pressed="false"><span>FASE 02</span><div class="roadmap-symbol" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 18h16M6 15l4-4 3 2 5-7M14 6h4v4"/></svg></div><h3>Pilotar</h3><p>Colocar em prática em um evento, como um workshop ou hackathon.</p><small>PRATICAR EM EVENTO</small></article><article class="roadmap-step" data-phase="2" tabindex="0" role="button" aria-pressed="false"><span>FASE 03</span><div class="roadmap-symbol" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v12H4zM8 9h8M8 13h4M7 21h10M12 17v4"/><path d="m15 10 1.5 1.5L19 9"/></svg></div><h3>Testar</h3><p>Recolher feedback dos participantes e testar o que funcionou.</p><small>FEEDBACK + VALIDAÇÃO</small></article><article class="roadmap-step" data-phase="3" tabindex="0" role="button" aria-pressed="false"><span>FASE 04</span><div class="roadmap-symbol" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 18 10 12l3 3 7-8M15 7h5v5M5 5h5M5 5v5"/></svg></div><h3>Expandir</h3><p>Ampliar o projeto com o que foi aprendido: novas edições, mentoria, portfólios e parcerias.</p><small>EVOLUIR COM EVIDÊNCIAS</small></article></div><div class="roadmap-detail" id="roadmap-detail" aria-live="polite"></div>
+        <div class="roadmap-steps" id="roadmap-steps"><svg class="roadmap-track" viewBox="0 0 1000 130" preserveAspectRatio="none" aria-hidden="true"><path class="track-base" d="M20 64 C135 64 135 24 260 24 S385 104 500 64 S635 24 750 24 S865 64 980 64"/></svg><article class="roadmap-step"><span>FASE 01</span><div class="roadmap-symbol" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5M8 10.5h5M10.5 8v5"/></svg></div><h3>Planejar</h3><p>Definir o projeto, o público da comunidade, objetivos, regras e recursos.</p><small>ESCUTA + PREPARAÇÃO</small></article><article class="roadmap-step"><span>FASE 02</span><div class="roadmap-symbol" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 18h16M6 15l4-4 3 2 5-7M14 6h4v4"/></svg></div><h3>Pilotar</h3><p>Colocar em prática em um evento, como um workshop ou hackathon.</p><small>PRATICAR EM EVENTO</small></article><article class="roadmap-step"><span>FASE 03</span><div class="roadmap-symbol" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v12H4zM8 9h8M8 13h4M7 21h10M12 17v4"/><path d="m15 10 1.5 1.5L19 9"/></svg></div><h3>Testar</h3><p>Recolher feedback dos participantes e testar o que funcionou.</p><small>FEEDBACK + VALIDAÇÃO</small></article><article class="roadmap-step"><span>FASE 04</span><div class="roadmap-symbol" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 18 10 12l3 3 7-8M15 7h5v5M5 5h5M5 5v5"/></svg></div><h3>Expandir</h3><p>Ampliar o projeto com o que foi aprendido: novas edições, mentoria, portfólios e parcerias.</p><small>EVOLUIR COM EVIDÊNCIAS</small></article></div><div class="roadmap-detail phase-visible" id="roadmap-detail"><div class="measure-title"><small>FASE 03 · EXEMPLO</small><b>Testar</b></div><div><small>ATIVIDADE</small><p>Recolher feedback dos participantes e testar o que funcionou.</p></div><div><small>EVIDÊNCIAS A ACOMPANHAR</small><p>Retornos dos participantes e mudanças observadas entre uma tentativa e outra.</p></div><div><small>CRITÉRIO ILUSTRATIVO</small><p>Manter ou ajustar a proposta com base no feedback.</p></div></div>
         <div class="measure-note"><b>AVALIAR PARA MELHORAR</b><span>Participação · projetos concluídos · competências · portfólios · mentores · parcerias · oportunidades</span><i>Sem números inventados. Sem promessa de emprego.</i></div>
       </section>
       <section class="slide closing dark" data-chapter="OBRIGADO POR FAZER PARTE">
@@ -668,8 +741,8 @@
         const bounds = card.getBoundingClientRect();
         const x = (event.clientX - bounds.left) / bounds.width - 0.5;
         const y = (event.clientY - bounds.top) / bounds.height - 0.5;
-        card.style.setProperty('--tilt-x', `${-y * 5}deg`);
-        card.style.setProperty('--tilt-y', `${x * 5}deg`);
+        card.style.setProperty('--tilt-x', `${Math.max(-2, Math.min(2, -y * 4))}deg`);
+        card.style.setProperty('--tilt-y', `${Math.max(-2, Math.min(2, x * 4))}deg`);
       });
       card.addEventListener('pointerleave', () => {
         card.style.removeProperty('--tilt-x');
@@ -714,11 +787,11 @@
     return `<section class="feedback-panel" aria-label="Avaliações demonstrativas"><div class="feedback-summary"><div><small>MÉDIA DAS AVALIAÇÕES · EXEMPLO</small><strong>${average}<span>/ 5</span></strong><b class="feedback-stars" aria-hidden="true">★★★★★</b></div><button type="button" class="certificate-button" id="show-certificate">Ver certificado de horas</button></div><div class="certificate-preview" id="certificate-preview" hidden>Certificado demonstrativo · atividade, carga horária, período e responsável.</div><div class="feedback-list" aria-label="Comentários de estudantes, exemplos">${comments}</div></section>`;
   };
   const teachingPanelMarkup = (stage) => {
-    if (stage === 1) return `<article class="stage-content-card course-card"><div class="course-seal">✓<small>HABILITADO</small></div><span class="content-eyebrow">CERTIFICADO DE CONCLUSÃO · EXEMPLO</span><h4>Fundamentos de Tecnologia</h4><div class="course-facts"><span><small>CARGA HORÁRIA</small><b>40 horas (exemplo)</b></span><span><small>CONCLUSÃO</small><b>12 ago 2026 (exemplo)</b></span></div><p>Curso concluído no I.A.S. · estudante apto a propor uma atividade extracurricular voluntária.</p></article>`;
+    if (stage === 1) return `<article class="stage-content-card course-card"><span class="content-eyebrow">CERTIFICADO DE CONCLUSÃO · EXEMPLO</span><div class="stage-card-title-row"><h4>Fundamentos de Tecnologia</h4><div class="course-seal" aria-label="Habilitado">✓<small>HABILITADO</small></div></div><div class="course-facts"><span><small>CARGA HORÁRIA</small><b>40 horas (exemplo)</b></span><span><small>CONCLUSÃO</small><b>12 ago 2026 (exemplo)</b></span></div><p>Curso concluído no I.A.S. · estudante apto a propor uma atividade extracurricular voluntária.</p></article>`;
     if (stage === 2) return `<form class="stage-content-card proposal-form"><span class="content-eyebrow">PROPOSTA DA AULA · EXEMPLO · SEM ENVIO</span><h4>O que você quer compartilhar?</h4><label>Tema<input readonly value="Introdução à tecnologia"></label><div class="proposal-fields"><label>Público<input readonly value="Comunidade acadêmica"></label><label>Nível<input readonly value="Iniciante"></label><label>Duração<input readonly value="60 minutos"></label></div><p>Proposta ilustrativa. A instituição revisa o escopo e define supervisão antes do agendamento.</p></form>`;
     if (stage === 3) return `<article class="stage-content-card approval-card"><div class="approval-check">✓</div><span class="content-eyebrow">DECISÃO · EXEMPLO</span><h4>Aprovado pela reitoria</h4><span class="approval-stamp">APROVADO PELA REITORIA</span><ul><li><i>✓</i>Escopo aprovado</li><li><i>✓</i>Supervisor definido</li><li><i>✓</i>Status: Concluído</li></ul><small>Registro ilustrativo para demonstrar o fluxo de aprovação.</small></article>`;
     if (stage === 4) return scheduleMarkup();
-    if (stage === 5) return `<article class="stage-content-card published-card"><span class="content-eyebrow">AULA PUBLICADA · EXEMPLO</span><div class="published-icon">↗</div><h4>Comunicação para apresentações</h4><p>Encontro voluntário e supervisionado, aberto aos alunos inscritos.</p><div class="published-details"><span><small>SEDE</small><b>Sede central (exemplo)</b></span><span><small>SALA</small><b>Sala 02 (exemplo)</b></span><span><small>DIA E HORÁRIO</small><b>Quarta · 14h–15h (exemplo)</b></span></div><div class="open-vacancies">8 vagas abertas aos alunos <small>(exemplo)</small></div></article>`;
+    if (stage === 5) return `<article class="stage-content-card published-card"><span class="content-eyebrow">AULA PUBLICADA · EXEMPLO</span><div class="stage-card-title-row"><h4>Comunicação para apresentações</h4><div class="published-icon" aria-hidden="true">↗</div></div><p>Encontro voluntário e supervisionado, aberto aos alunos inscritos.</p><div class="published-details"><span><small>SEDE</small><b>Sede central (exemplo)</b></span><span><small>SALA</small><b>Sala 02 (exemplo)</b></span><span><small>DIA E HORÁRIO</small><b>Quarta · 14h–15h (exemplo)</b></span></div><div class="open-vacancies">8 vagas abertas aos alunos <small>(exemplo)</small></div></article>`;
     if (stage === 6) return `<article class="stage-content-card completed-card"><span class="content-eyebrow">REGISTRO DA ATIVIDADE · EXEMPLO</span><div class="completed-status"><i>✓</i>Realizada</div><h4>Comunicação para apresentações</h4><div class="attendance"><strong>7 <small>/ 8</small></strong><span>alunos presentes<br>(exemplo)</span></div><div class="completed-location">⌖ &nbsp;Sede central · Sala 02 · Na universidade</div><p>Encontro conduzido com exemplos práticos e conversa em grupo.</p></article>`;
     return feedbackMarkup();
   };
@@ -736,7 +809,6 @@
       const label = button.querySelector('b')?.textContent?.trim() || 'Etapa';
       button.setAttribute('aria-label', `Etapa ${pad(button.dataset.stage)}: ${label}, ${active ? 'etapa atual' : complete ? 'concluída' : 'pendente'}. Selecione para abrir.`);
     });
-    teachingFlow?.style.setProperty('--progress', `${((index - 1) / 6) * 100}%`);
     stagePanelKicker.textContent = `ETAPA ${pad(index)} · ${teachingStageNames[index - 1][0]}`;
     stagePanelTitle.textContent = teachingStageNames[index - 1][1];
     stagePanelTag.textContent = 'EXEMPLO';
@@ -748,9 +820,23 @@
       stagePanel.querySelectorAll('.calendar-grid > *').forEach((cell, i) => cell.style.setProperty('--cell-index', i + 1));
       stagePanel.querySelectorAll('.slot').forEach((slot) => slot.setAttribute('aria-label', `${slot.dataset.day}, ${slot.dataset.time}: ${slot.textContent.trim()} (exemplo). Clique para detalhes.`));
     }
-    requestAnimationFrame(() => stagePanel.classList.add('panel-enter'));
+    requestAnimationFrame(() => { updateTeachingConnector(); stagePanel.classList.add('panel-enter'); });
   }
   document.querySelectorAll('.stage-step').forEach((button) => button.addEventListener('click', () => setTeachingStage(button.dataset.stage)));
+  function updateTeachingConnector() {
+    if (!teachingFlow) return;
+    const steps = [...teachingFlow.querySelectorAll('.stage-step')];
+    if (!steps.length) return;
+    const bounds = teachingFlow.getBoundingClientRect();
+    const centerY = (element) => { const rect = element.getBoundingClientRect(); return rect.top + rect.height / 2; };
+    const firstY = centerY(steps[0]);
+    const lastY = centerY(steps[steps.length - 1]);
+    const active = teachingFlow.querySelector('.stage-step.flow-current') || steps[0];
+    teachingFlow.style.setProperty('--connector-top', `${Math.max(0, firstY - bounds.top)}px`);
+    teachingFlow.style.setProperty('--connector-bottom', `${Math.max(0, bounds.bottom - lastY)}px`);
+    teachingFlow.style.setProperty('--progress-height', `${Math.max(0, centerY(active) - firstY)}px`);
+  }
+  window.addEventListener('resize', updateTeachingConnector, { passive: true });
   setTeachingStage(4);
   const scheduleDialog = scheduleModal?.querySelector('.schedule-dialog');
   const modalWhen = document.getElementById('modal-when');
@@ -906,38 +992,14 @@
     });
   }
 
-  const journeyDetails = [
-    'Demanda: A instituição ou um parceiro apresenta uma necessidade real para ser trabalhada com escopo e acompanhamento.',
-    'Escopo: Objetivo, prazo e limites ficam definidos antes do início do projeto.',
-    'Execução supervisionada: O estudante desenvolve o projeto com apoio de um orientador.',
-    'Entrega e registro: A entrega é revisada e a experiência pode ser registrada no portfólio.'
-  ];
   const areaDetails = [
     { title: 'Tecnologia · exemplo', lines: ['Projeto: Atualizar o site de um laboratório', 'Entrega: proposta de atualização revisada', 'Orientador: docente responsável pelo projeto'] },
     { title: 'Comunicação · exemplo', lines: ['Projeto: Produzir o boletim mensal do curso', 'Entrega: edição demonstrativa revisada', 'Orientador: pessoa responsável pela comunicação'] },
     { title: 'Design · exemplo', lines: ['Projeto: Criar a identidade visual de um evento', 'Entrega: conjunto de peças demonstrativas', 'Orientador: docente responsável pelo projeto'] },
     { title: 'Mentoria e desafios · exemplo', lines: ['Projeto: Mentoria para iniciantes em um hackathon', 'Entrega: plano de orientação e devolutivas', 'Orientador: mentor e responsável institucional'] }
   ];
-  const projectJourney = document.getElementById('project-journey');
-  const journeyDetail = document.getElementById('journey-detail');
   const areaCard = document.getElementById('area-card');
-  let selectedStep = 0;
   let selectedArea = 0;
-  function updateJourney() {
-    if (!projectJourney) return;
-    projectJourney.querySelectorAll('.journey-card').forEach((card, index) => {
-      const active = index === selectedStep;
-      card.classList.toggle('selected', active);
-      card.setAttribute('aria-pressed', String(active));
-    });
-    if (journeyDetail) {
-      journeyDetail.classList.remove('visible');
-      requestAnimationFrame(() => {
-        journeyDetail.textContent = journeyDetails[selectedStep];
-        journeyDetail.classList.add('visible');
-      });
-    }
-  }
   function updateAreas() {
     document.querySelectorAll('.partnership .area-chip').forEach((chip, index) => {
       const active = index === selectedArea;
@@ -953,66 +1015,9 @@
       });
     }
   }
-  projectJourney?.querySelectorAll('.journey-card').forEach((card, index) => {
-    card.addEventListener('click', () => { selectedStep = index; updateJourney(); });
-  });
-  document.querySelectorAll('.partnership .area-chip').forEach((chip, index) => {
-    chip.addEventListener('click', () => { selectedArea = index; updateAreas(); });
-  });
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-    projectJourney?.querySelectorAll('.journey-card').forEach((card) => {
-      card.addEventListener('pointermove', (event) => {
-        const bounds = card.getBoundingClientRect();
-        const x = (event.clientX - bounds.left) / bounds.width - .5;
-        const y = (event.clientY - bounds.top) / bounds.height - .5;
-        card.style.setProperty('--tilt-x', (-y * 6) + 'deg');
-        card.style.setProperty('--tilt-y', (x * 6) + 'deg');
-      });
-      card.addEventListener('pointerleave', () => {
-        card.style.removeProperty('--tilt-x');
-        card.style.removeProperty('--tilt-y');
-      });
-    });
-  }
-  updateJourney();
   updateAreas();
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.querySelectorAll('.journey-light animateMotion').forEach((motion) => motion.remove());
 
-  const phaseInfo = [
-    ['Planejar', 'Definir o projeto, o público da comunidade, objetivos, regras e recursos.', 'Público, objetivos, regras e recursos definidos com a comunidade.', 'Plano alinhado às necessidades da comunidade e aos recursos disponíveis.'],
-    ['Pilotar', 'Colocar em prática em um evento, como um workshop ou hackathon.', 'Participação, dúvidas e pontos de atenção observados durante a atividade.', 'Aprendizados do evento orientam os próximos testes.'],
-    ['Testar', 'Recolher feedback dos participantes e testar o que funcionou.', 'Retornos dos participantes e mudanças observadas entre uma tentativa e outra.', 'Manter ou ajustar a proposta com base no feedback.'],
-    ['Expandir', 'Ampliar o projeto com novas edições, mentoria, portfólios e parcerias.', 'Aprendizados registrados, interesse da comunidade e recursos disponíveis.', 'Ampliar com acompanhamento e condições sustentáveis.']
-  ];
-  const roadmap = document.getElementById('roadmap-steps');
-  const roadmapDetail = document.getElementById('roadmap-detail');
-  let selectedPhase = 0;
-  function selectPhase(index) {
-    selectedPhase = index;
-    roadmap?.querySelectorAll('.roadmap-step').forEach((step) => {
-      const active = Number(step.dataset.phase) === index;
-      step.classList.toggle('selected', active);
-      step.setAttribute('aria-pressed', String(active));
-      if (active) step.setAttribute('aria-current', 'step');
-      else step.removeAttribute('aria-current');
-    });
-    const activePath = roadmap?.querySelector('.track-active');
-    if (activePath) activePath.style.strokeDasharray = `${[18, 41, 68, 100][index]} 100`;
-    const [title, activity, evidence, criteria] = phaseInfo[index];
-    roadmapDetail.classList.remove('phase-visible');
-    requestAnimationFrame(() => {
-      roadmapDetail.innerHTML = '<div class="measure-title"><small>FASE ' + String(index + 1).padStart(2, '0') + ' · EXEMPLO</small><b>' + title + '</b></div><div><small>ATIVIDADE</small><p>' + activity + '</p></div><div><small>EVIDÊNCIAS A ACOMPANHAR</small><p>' + evidence + '</p></div><div><small>CRITÉRIO ILUSTRATIVO</small><p>' + criteria + '</p></div>';
-      roadmapDetail.classList.add('phase-visible');
-    });
-  }
-  roadmap?.querySelectorAll('.roadmap-step').forEach((step) => {
-    const index = Number(step.dataset.phase);
-    step.addEventListener('click', () => selectPhase(index));
-    step.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); event.stopPropagation(); selectPhase(index); }
-    });
-  });
-  selectPhase(0);
 
   document.addEventListener('keydown', (event) => {
     if (scheduleModal?.classList.contains('open')) {
