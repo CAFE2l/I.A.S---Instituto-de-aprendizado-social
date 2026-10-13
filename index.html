@@ -215,6 +215,134 @@
 @media(max-height:760px) and (min-width:651px){.weekly-calendar{height:clamp(370px,53vh,410px);min-height:370px}.approval-card{padding:12px 20px}.approval-check{width:78px;height:78px;flex-basis:78px;font-size:38px}.approval-card ul{margin:10px 0 8px;gap:7px}}
 @media(max-width:650px){.teaching-flow{overflow:visible}.teaching-flow:before,.teaching-flow:after{display:none}.stage-step{min-height:34px;padding:3px 5px;grid-template-columns:28px minmax(0,1fr);gap:5px}.stage-step i{width:28px;height:28px;flex-basis:28px}.weekly-calendar{height:auto;min-height:clamp(245px,38svh,320px);max-height:none;overflow:visible}.stage-panel-content{flex:none}.approval-card{padding:12px}.approval-check{width:54px;height:54px;flex-basis:54px;font-size:26px;margin:0 0 4px}.approval-card h4{font-size:21px;margin:5px 0 7px}.approval-stamp{font-size:7px;padding:6px 9px}.approval-card ul{gap:5px;margin:8px 0 5px}.approval-card li{font-size:9px}.approval-card>small{font-size:6px}}
 @media(prefers-reduced-motion:reduce){.stage-step.flow-current i{animation:none!important}.stage-panel-content{transition:none!important}}
+/* Slide 06 — glass project journey */
+.slide.partnership{display:flex;flex-direction:column;gap:clamp(8px,1.2vh,13px);padding-top:clamp(68px,8vh,86px);padding-bottom:clamp(65px,8vh,84px);color:#f1f7fc;background:radial-gradient(ellipse at 50% 44%,rgba(46,126,192,.2),transparent 50%),radial-gradient(circle at 15% 85%,rgba(91,178,230,.09),transparent 25%),linear-gradient(130deg,#041a3e,#082b68 64%,#061d47);overflow:hidden}
+.slide.partnership:before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background-image:radial-gradient(circle,rgba(193,225,246,.45) .7px,transparent 1px),radial-gradient(circle at 76% 18%,rgba(106,186,238,.15),transparent 24%);background-size:34px 34px,auto;mask-image:linear-gradient(115deg,transparent 2%,#000 44%,transparent 96%);opacity:.25}
+.slide.partnership>*{position:relative;z-index:1}
+.partnership .section-head{flex:none}
+.partnership .section-head .eyebrow{margin:0 0 10px;color:#91b7d7;font-size:9px}
+.partnership .section-head h2{max-width:850px;font-size:clamp(35px,4.2vw,57px);margin:0 0 8px;color:#f5f8fa}
+.partnership .section-head h2 em{color:#b8d6f0}
+.partnership .section-head .support{max-width:690px;font-size:clamp(10px,.95vw,13px);line-height:1.45;color:rgba(228,239,248,.69)}
+.project-journey{display:grid;grid-template-rows:auto auto;gap:10px;margin:0;perspective:1400px}
+.journey-track-wrapper{position:relative;padding:3px 0 0;isolation:isolate}
+.journey-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(10px,1.55vw,18px);position:relative;z-index:2}
+.journey-line{position:absolute;z-index:0;top:4px;left:0;right:0;width:100%;height:80px;transform:none;overflow:visible;pointer-events:none}
+.journey-path{fill:none;stroke:rgba(158,205,240,.4);stroke-width:1.4;vector-effect:non-scaling-stroke}
+.journey-light,.roadmap-light{fill:#c6efff;filter:drop-shadow(0 0 6px #6ac9ff)}
+.journey-card{appearance:none;position:relative;z-index:2;isolation:isolate;min-width:0;min-height:166px;padding:72px 15px 14px;text-align:left;color:#f0f7fb;border:1px solid rgba(186,220,243,.22);border-radius:11px;background:linear-gradient(145deg,rgba(15,52,96,.91),rgba(7,34,75,.84));backdrop-filter:blur(16px);box-shadow:0 20px 42px rgba(0,7,26,.27),inset 0 1px rgba(255,255,255,.15),inset 0 -1px rgba(113,187,229,.1);transform:perspective(1000px) rotateX(var(--tilt-x,2deg)) rotateY(var(--tilt-y,0deg));transform-style:preserve-3d;will-change:transform;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease,background-color .22s ease;cursor:pointer;overflow:visible}
+.journey-card:before{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(140deg,rgba(255,255,255,.12),transparent 42%);opacity:.6;pointer-events:none;z-index:0;transition:opacity .22s ease}
+.journey-card:hover,.journey-card:focus-visible,.journey-card.selected{border-color:rgba(141,212,250,.62);box-shadow:0 24px 52px rgba(0,7,26,.35),0 0 24px rgba(64,172,231,.16),inset 0 1px rgba(255,255,255,.2)}
+.journey-card:hover:before,.journey-card:focus-visible:before,.journey-card.selected:before{opacity:.9}
+.journey-card:focus-visible{outline:2px solid #a4ddff;outline-offset:3px}
+.journey-card>*{position:relative;z-index:1;transform:translateZ(10px)}
+.journey-card .step-number{position:absolute;right:14px;top:12px;font-size:8px;letter-spacing:.16em;color:#b9d6ec}
+.journey-card .step-icon{position:absolute;left:15px;top:15px;z-index:4;width:54px;height:54px;display:grid;place-items:center;border-radius:50%;background-color:#092956;background-image:linear-gradient(145deg,#1d4d7d,#08234d);border:1px solid rgba(183,225,250,.62);box-shadow:0 0 0 5px rgba(4,27,64,.92),0 10px 24px rgba(0,5,22,.3),inset 0 1px rgba(255,255,255,.32),inset 0 -8px 14px rgba(1,17,43,.23);transform:translateZ(22px);pointer-events:none}
+.journey-card .step-icon:after,.roadmap-symbol:after{content:"";position:absolute;inset:1px 3px 48%;border-radius:inherit;background:linear-gradient(rgba(255,255,255,.19),transparent);pointer-events:none}
+.step-icon svg,.guardrails svg,.roadmap-symbol svg{display:block;width:22px;height:22px;fill:none;stroke:#c8e9fc;stroke-width:1.45;stroke-linecap:round;stroke-linejoin:round}
+.journey-card h3{font:600 clamp(14px,1.35vw,18px)/1.15 var(--serif);color:#f5f8fa;margin:0 0 7px;letter-spacing:0}
+.journey-card p{font-size:clamp(9px,.82vw,11px);line-height:1.45;color:rgba(226,239,248,.68);margin:0;max-width:260px}
+.journey-detail{min-height:43px;padding:10px 14px;border:1px solid rgba(170,213,239,.2);border-radius:7px;background:linear-gradient(110deg,rgba(255,255,255,.075),rgba(255,255,255,.025));backdrop-filter:blur(12px);box-shadow:0 12px 28px rgba(0,6,24,.18),inset 0 1px rgba(255,255,255,.1);font-size:clamp(9px,.78vw,11px);line-height:1.45;color:rgba(229,241,249,.78);opacity:0;transform:translateY(5px);transition:opacity .22s ease,transform .22s ease,border-color .22s ease}
+.journey-detail.visible{opacity:1;transform:none}
+.areas-section{display:grid;grid-template-columns:minmax(260px,.82fr) minmax(0,1.18fr);align-items:stretch;gap:12px;margin:0}
+.areas-chips{display:flex;align-content:center;align-items:center;flex-wrap:wrap;gap:7px}
+.area-chip{appearance:none;padding:8px 12px;border:1px solid rgba(184,218,241,.25);border-radius:22px;color:#d8e9f5;background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.025));box-shadow:0 7px 17px rgba(0,7,26,.14),inset 0 1px rgba(255,255,255,.12);backdrop-filter:blur(10px);font:600 8px var(--sans);letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:border-color .2s ease,box-shadow .2s ease,background-color .2s ease,color .2s ease}
+.area-chip:hover,.area-chip:focus-visible,.area-chip.selected{border-color:rgba(144,211,248,.68);color:#f3faff;background:linear-gradient(145deg,rgba(92,165,214,.35),rgba(255,255,255,.07));box-shadow:0 0 18px rgba(75,170,226,.18),inset 0 1px rgba(255,255,255,.17)}
+.area-chip:focus-visible{outline:2px solid #a4ddff;outline-offset:3px}
+.area-card{min-height:73px;padding:10px 14px;border:1px solid rgba(174,215,241,.2);border-radius:8px;background:linear-gradient(135deg,rgba(255,255,255,.09),rgba(255,255,255,.025));box-shadow:0 14px 30px rgba(0,6,24,.2),inset 0 1px rgba(255,255,255,.12);backdrop-filter:blur(12px);color:#eaf4fa;opacity:0;transform:translateY(5px);transition:opacity .22s ease,transform .22s ease,border-color .2s ease}
+.area-card.visible{opacity:1;transform:none}
+.area-card>b{display:block;font:600 15px var(--serif);color:#eff8fd;margin-bottom:5px}
+.area-card .area-line{display:inline-block;margin:2px 14px 0 0;font-size:clamp(8px,.72vw,10px);line-height:1.35;color:rgba(222,238,248,.66)}
+.area-card .area-line:first-of-type{color:#d5edfb}
+.guardrails{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:0;padding:0;border:0}
+.guardrails span{min-height:34px;display:flex;align-items:center;justify-content:center;gap:7px;padding:7px 9px;border:1px solid rgba(183,219,243,.17);border-radius:7px;background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.018));color:rgba(222,239,249,.67);font-size:clamp(6px,.58vw,8px);letter-spacing:.1em;text-align:center}
+.guardrails svg{width:15px;height:15px;flex:0 0 15px;stroke:#a9d9f4}
+.partnership.active .journey-card{animation:projectCascade .48s cubic-bezier(.2,.75,.25,1) both;animation-delay:calc(var(--card-order,0)*90ms)}
+.journey-card:nth-child(1){--card-order:0}.journey-card:nth-child(2){--card-order:1}.journey-card:nth-child(3){--card-order:2}.journey-card:nth-child(4){--card-order:3}
+@keyframes projectCascade{from{opacity:0;translate:0 12px}to{opacity:1;translate:0 0}}
+
+/* Slide 09 — community project roadmap */
+.slide.roadmap{display:flex;flex-direction:column;gap:clamp(10px,1.45vh,14px);padding-top:clamp(68px,8vh,88px);padding-bottom:clamp(65px,8vh,84px);color:#eff6fb;background:radial-gradient(ellipse at 76% 34%,rgba(48,130,207,.19),transparent 40%),radial-gradient(ellipse at 15% 86%,rgba(62,146,206,.1),transparent 28%),linear-gradient(125deg,#041a3e,#082b68 65%,#061d47);overflow:hidden}
+.slide.roadmap:before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background-image:radial-gradient(circle,rgba(191,226,247,.38) .65px,transparent 1px);background-size:32px 32px;opacity:.2;mask-image:radial-gradient(ellipse at 55% 50%,#000,transparent 85%)}
+.slide.roadmap>*{position:relative;z-index:1}
+.roadmap .section-head{flex:none}
+.roadmap .section-head .eyebrow{font-size:9px;color:#9bc5e5;margin:0 0 9px}
+.roadmap .section-head h2{max-width:760px;font-size:clamp(35px,4.25vw,58px);line-height:1.02;margin:0 0 8px;color:#f4f8fa}
+.roadmap .section-head h2 em{color:#b8d6f0}
+.roadmap .section-head .support{max-width:760px;font-size:clamp(10px,.95vw,13px);line-height:1.45;color:rgba(226,239,248,.69)}
+.roadmap-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(10px,1.5vw,17px);position:relative;margin:13px 0 0;padding:0;perspective:1200px;isolation:isolate}
+.roadmap-track{position:absolute;z-index:0;left:0;right:0;top:7px;width:100%;height:104px;overflow:visible;pointer-events:none}
+.track-base{fill:none;stroke:rgba(165,207,237,.4);stroke-width:1.5;vector-effect:non-scaling-stroke}
+.track-active{fill:none;stroke:#72c9fb;stroke-width:2;stroke-dasharray:18 100;filter:drop-shadow(0 0 5px rgba(94,193,247,.58));transition:stroke-dasharray .4s ease}
+.roadmap-light{fill:#dbf5ff}
+.roadmap-step{position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;min-width:0;min-height:184px;padding:16px 15px 14px;border:1px solid rgba(181,219,243,.2);border-radius:10px;color:#edf5fa;background:linear-gradient(145deg,rgba(15,52,96,.91),rgba(7,34,75,.84));backdrop-filter:blur(16px);box-shadow:0 18px 38px rgba(0,7,26,.24),inset 0 1px rgba(255,255,255,.15);cursor:pointer;transform-style:preserve-3d;transition:border-color .22s ease,box-shadow .22s ease,background-color .22s ease}
+.roadmap-step>span{font-size:7px;letter-spacing:.16em;color:#a8cbe5}
+.roadmap-symbol{position:relative;z-index:3;box-sizing:border-box;width:50px;height:50px;flex:0 0 50px;margin:11px 0 12px;display:grid;place-items:center;border:1px solid rgba(179,224,250,.66);border-radius:50%;background-color:#092956;background-image:linear-gradient(145deg,#1d4d7d,#08234d);box-shadow:0 0 0 5px rgba(4,27,64,.96),0 10px 22px rgba(0,5,22,.3),inset 0 1px rgba(255,255,255,.32);color:#d8f2ff}
+.roadmap-symbol svg{width:22px;height:22px;stroke:#d2efff;stroke-width:1.5}
+.roadmap-step h3{font:600 clamp(17px,1.7vw,22px)/1.1 var(--serif);color:#f4f8fa;margin:0 0 7px}
+.roadmap-step p{font-size:clamp(9px,.8vw,11px);line-height:1.42;color:rgba(225,239,248,.67);margin:0 0 10px;max-width:250px}
+.roadmap-step small{font-size:6px;line-height:1.3;letter-spacing:.12em;color:#a8cce6;margin-top:auto}
+.roadmap-step:hover,.roadmap-step:focus-visible,.roadmap-step.selected{border-color:rgba(140,211,249,.62);box-shadow:0 22px 44px rgba(0,7,26,.32),0 0 20px rgba(68,174,230,.16),inset 0 1px rgba(255,255,255,.2)}
+.roadmap-step:focus-visible{outline:2px solid #a4ddff;outline-offset:3px}
+.roadmap-step.selected .roadmap-symbol{box-shadow:0 0 0 5px rgba(4,27,64,.96),0 0 22px rgba(100,200,246,.36),inset 0 1px rgba(255,255,255,.38);animation:phasePulse .7s ease-out 1}
+.roadmap-detail{display:grid;grid-template-columns:minmax(150px,.78fr) repeat(3,minmax(0,1fr));align-items:stretch;gap:0;min-height:125px;margin:0;padding:0;border:1px solid rgba(178,216,240,.21);border-radius:9px;background:linear-gradient(115deg,rgba(255,255,255,.09),rgba(255,255,255,.025));backdrop-filter:blur(14px);box-shadow:0 16px 34px rgba(0,6,23,.23),inset 0 1px rgba(255,255,255,.13);opacity:0;transform:translateY(6px);transition:opacity .22s ease,transform .22s ease}
+.roadmap-detail.phase-visible{opacity:1;transform:none}
+.roadmap-detail>div{min-width:0;padding:13px 14px;display:flex;flex-direction:column;gap:7px}
+.roadmap-detail>div+div{border-left:1px solid rgba(194,224,243,.12)}
+.roadmap-detail small{font-size:6px;line-height:1.35;letter-spacing:.12em;color:#9fc6e4}
+.roadmap-detail b{font:600 17px/1.16 var(--serif);color:#f4f8fa}
+.roadmap-detail p{font-size:clamp(8px,.72vw,10px);line-height:1.42;color:rgba(222,237,247,.69);margin:0}
+.measure-note{display:grid;grid-template-columns:minmax(155px,.7fr) minmax(0,2fr) minmax(190px,1fr);align-items:center;gap:14px;margin:0;padding:10px 0 0;border-top:1px solid rgba(181,215,239,.24)}
+.measure-note b{font-size:7px;letter-spacing:.13em;color:#c5e0f2}
+.measure-note span{font-size:clamp(7px,.66vw,9px);line-height:1.4;color:rgba(214,232,244,.64)}
+.measure-note i{font:italic 11px var(--serif);line-height:1.35;color:#bad7ed;text-align:right}
+.roadmap.active .roadmap-step{animation:projectCascade .48s cubic-bezier(.2,.75,.25,1) both;animation-delay:calc(var(--phase-order,0)*90ms)}
+.roadmap-step:nth-of-type(2){--phase-order:0}.roadmap-step:nth-of-type(3){--phase-order:1}.roadmap-step:nth-of-type(4){--phase-order:2}.roadmap-step:nth-of-type(5){--phase-order:3}
+@keyframes phasePulse{0%{box-shadow:0 0 0 0 rgba(112,203,249,.36)}70%{box-shadow:0 0 0 8px rgba(112,203,249,.08),0 0 24px rgba(101,194,244,.42)}100%{box-shadow:0 0 0 5px rgba(4,27,64,.96),0 0 22px rgba(100,200,246,.36)}}
+
+/* Slide 07 — precise check markers */
+.teaching-flow:before,.teaching-flow:after{left:25px;z-index:0}
+.stage-step{position:relative;z-index:1;grid-template-columns:34px minmax(0,1fr);padding-left:8px;min-height:48px}
+.stage-step i{box-sizing:border-box;width:34px;height:34px;flex:0 0 34px;display:grid;place-items:center;line-height:1;font-size:8px;font-variant-numeric:tabular-nums;letter-spacing:.04em;overflow:hidden;background-color:#082b55;background-image:linear-gradient(145deg,#0b315f,#08264f);z-index:2}
+.stage-step i:after{content:none!important}
+.stage-number{display:block;line-height:1}
+.stage-check{display:none;width:16px;height:16px;overflow:visible;fill:none;stroke:#082849;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.stage-check path{stroke-dasharray:24;stroke-dashoffset:24}
+.stage-step.is-complete i{font-size:8px;color:#07264b;background-color:#2976ae;background-image:linear-gradient(145deg,#9de0fa,#4f9bd0);border-color:rgba(194,239,255,.9);box-shadow:0 0 14px rgba(73,178,230,.3),inset 0 1px rgba(255,255,255,.45)}
+.stage-step.is-complete .stage-number{display:none}
+.stage-step.is-complete .stage-check{display:block}
+.stage-step.is-complete .stage-check path{animation:drawStageCheck .46s cubic-bezier(.2,.75,.2,1) both}
+.stage-step.flow-current i{background-color:#347fb8;background-image:linear-gradient(145deg,#b9e9fb,#71acd8);color:#06254a;animation:stepPulseOnce .68s ease-out 1}
+.stage-step.flow-current .stage-number{display:block}
+.stage-step.flow-current .stage-check{display:none}
+.stage-step:not(.is-complete):not(.flow-current) i{background-color:#082b55;background-image:linear-gradient(145deg,#0b315f,#08264f);color:#dceafa}
+.stage-step:hover i,.stage-step:focus-visible i{border-color:rgba(195,237,255,.95)}
+@keyframes drawStageCheck{to{stroke-dashoffset:0}}
+@media(max-width:900px) and (min-width:651px){.partnership .journey-card{padding-left:12px;padding-right:12px}.partnership .area-card .area-line{margin-right:8px}.roadmap-detail{grid-template-columns:minmax(135px,.7fr) repeat(3,minmax(0,1fr))}.roadmap-detail>div{padding:11px 10px}}
+@media(max-height:760px) and (min-width:651px){.slide.partnership,.slide.roadmap{padding-top:61px;padding-bottom:58px;gap:8px}.partnership .section-head h2,.roadmap .section-head h2{font-size:clamp(32px,3.7vw,48px)}.partnership .journey-card{min-height:145px;padding-top:66px}.journey-detail{min-height:38px;padding-top:8px;padding-bottom:8px}.roadmap-steps{margin-top:6px}.roadmap-step{min-height:155px;padding:12px}.roadmap-detail{min-height:105px}.roadmap-detail>div{padding:9px 10px}.measure-note{padding-top:7px}}
+@media(max-width:650px){.slide.partnership,.slide.roadmap{padding:70px 20px 74px;overflow:hidden;gap:8px}.partnership .section-head h2,.roadmap .section-head h2{font-size:32px}.partnership .section-head .support,.roadmap .section-head .support{font-size:9px}.journey-steps,.roadmap-steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.journey-line,.roadmap-track{display:none}.journey-card{min-height:126px;padding:62px 11px 11px}.journey-card .step-icon{width:43px;height:43px;left:11px;top:12px}.journey-card .step-number{top:10px;right:10px}.journey-card h3{font-size:14px}.journey-card p,.roadmap-step p{font-size:8px}.journey-detail{min-height:38px;font-size:8px;padding:8px 10px}.areas-section{grid-template-columns:1fr;gap:7px}.areas-chips{gap:5px}.area-chip{font-size:6px;padding:7px 9px}.area-card{min-height:58px;padding:8px 10px}.area-card>b{font-size:12px}.area-card .area-line{font-size:7px;margin-right:8px}.guardrails{grid-template-columns:1fr 1fr;gap:5px}.guardrails span{font-size:5px;min-height:28px;padding:5px}.guardrails svg{width:13px;height:13px;flex-basis:13px}.roadmap-steps{margin-top:4px}.roadmap-step{min-height:148px;padding:11px}.roadmap-symbol{width:40px;height:40px;flex-basis:40px;margin:8px 0}.roadmap-step h3{font-size:16px}.roadmap-step small{font-size:5px}.roadmap-detail{grid-template-columns:1fr 1fr;min-height:0}.roadmap-detail>div{padding:8px}.roadmap-detail>div+div{border-left:0}.roadmap-detail>div:nth-child(even){border-left:1px solid rgba(194,224,243,.12)}.roadmap-detail>div:nth-child(n+3){border-top:1px solid rgba(194,224,243,.12)}.roadmap-detail b{font-size:14px}.roadmap-detail p{font-size:7px}.measure-note{grid-template-columns:1fr 1fr;gap:5px;padding-top:7px}.measure-note b{font-size:6px}.measure-note span{font-size:6px}.measure-note i{font-size:8px;grid-column:1/3;text-align:left}}
+@media(max-width:650px){.stage-step{min-height:36px;grid-template-columns:30px minmax(0,1fr);padding:2px 5px}.stage-step i{width:30px;height:30px;flex-basis:30px}.teaching-flow:before,.teaching-flow:after{left:20px}}
+@media(prefers-reduced-motion:reduce){.partnership:before,.journey-card,.partnership.active .journey-card,.roadmap.active .roadmap-step,.roadmap-step.selected .roadmap-symbol,.stage-step.flow-current i,.stage-step.is-complete .stage-check path{animation:none!important;transition:none!important}.journey-card{transform:none!important;will-change:auto}.journey-detail,.area-card,.roadmap-detail{transition:none!important}.journey-light,.roadmap-light{display:none}}
+/* Cover layout: isolated text and logo columns; keeps all decoration inside the visual column. */
+.slide.cover{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:center;gap:clamp(32px,5vw,80px);padding-top:clamp(88px,12vh,128px);padding-bottom:clamp(80px,11vh,106px)}
+.cover-copy{width:100%;max-width:none;min-width:0;position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;gap:clamp(14px,2.1vh,24px)}
+.cover .eyebrow{margin:0}
+.cover h1{position:relative;z-index:2;font-size:clamp(48px,6.6vw,102px);line-height:.98;margin:0;font-weight:500;letter-spacing:-.045em}
+.cover-word{white-space:nowrap;overflow-wrap:normal}
+.cover h1 em{color:#d4e3f2}
+.cover .lead{font-size:clamp(15px,1.65vw,23px);line-height:1.55;color:rgba(255,251,240,.75);max-width:520px;margin:0}
+.cover-rule{display:flex;align-items:center;gap:14px;margin:0;color:rgba(255,251,240,.5);font-size:9px;letter-spacing:.16em}
+.cover-rule span{width:46px;height:1px;background:#9eb7d0;flex:0 0 46px}
+.cover-visual{grid-column:2;grid-row:1;justify-self:center;align-self:center;width:min(100%,440px);aspect-ratio:1.5;position:relative;display:grid;place-items:center;perspective:1200px;isolation:isolate;overflow:hidden}
+.cover-visual .mark-orbit{position:absolute;inset:2%;z-index:0;border:1px solid rgba(255,255,255,.18);border-radius:50%;box-shadow:inset 0 0 34px rgba(255,255,255,.04);pointer-events:none}
+.cover-visual .mark-orbit:before,.cover-visual .mark-orbit:after{content:'';position:absolute;border:1px solid rgba(255,255,255,.12);border-radius:50%;inset:11%;transform:rotateX(66deg);pointer-events:none}
+.cover-visual .mark-orbit:after{inset:5%;transform:rotateY(70deg)}
+.cover-mark{position:relative;z-index:1;width:min(100%,420px);aspect-ratio:16/10;margin:0;display:grid;place-items:center;border:1px solid rgba(226,239,248,.38);border-radius:14px;background:linear-gradient(145deg,rgba(255,255,255,.17),rgba(255,255,255,.045));box-shadow:0 28px 78px rgba(0,0,0,.31),inset 0 1px rgba(255,255,255,.3);backdrop-filter:blur(10px);transform:rotateY(-8deg) rotateX(2deg);transform-style:preserve-3d}
+.cover-mark img{width:91%;max-height:90%;height:auto;object-fit:contain;border-radius:10px;position:relative;z-index:1;box-shadow:0 25px 70px rgba(0,0,0,.3),0 0 46px rgba(122,180,235,.16)}
+.cover-index{z-index:2}
+@media(max-height:760px) and (min-width:901px){.slide.cover{padding-top:70px;padding-bottom:62px;gap:clamp(24px,4vw,54px)}.cover-copy{gap:clamp(12px,1.4vh,18px)}.cover h1{font-size:clamp(45px,6vw,88px)}.cover-visual{aspect-ratio:1.7}}
+@media(max-width:900px){.slide.cover{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto;align-content:center;gap:clamp(20px,3vh,32px);padding-top:82px;padding-bottom:88px}.cover-copy{grid-column:1;grid-row:1}.cover-visual{grid-column:1;grid-row:2;width:min(100%,380px);aspect-ratio:1.55}.cover-mark{width:min(100%,360px)}}
+@media(max-width:650px){.slide.cover{padding:76px 24px 86px;gap:16px;overflow-y:auto}.cover-copy{gap:12px}.cover .eyebrow{font-size:8px}.cover h1{font-size:clamp(34px,9.2vw,58px)}.cover .lead{font-size:13px}.cover-rule{font-size:7px;letter-spacing:.1em}.cover-visual{width:min(100%,290px);aspect-ratio:1.55}.cover-mark{width:min(100%,280px)}}
   </style>
 </head>
 <body>
@@ -224,8 +352,8 @@
     <div class="topline"><span class="brand-mini"><img src="imgs/favicon.png" alt=""><span>I.A.S.</span></span><span class="chapter" id="chapter">VISÃO INSTITUCIONAL</span><span class="counter" id="counter">01 <i>/</i> 10</span></div>
     <div class="slides" id="slides" aria-live="polite">
       <section class="slide cover dark" data-chapter="VISÃO INSTITUCIONAL">
-        <div class="cover-copy"><p class="eyebrow">INSTITUTO DE APRENDIZADO SOCIAL</p><h1>Conhecimento<br><em>em movimento.</em></h1><p class="lead">Transformando aprendizagem em experiência — e experiência em possibilidades.</p><div class="cover-rule"><span></span><small>UMA JORNADA PARA APRENDER, PRATICAR E DEMONSTRAR</small></div></div>
-        <div class="cover-mark"><div class="mark-orbit"></div><img src="imgs/logo-escuro.png" alt="Logotipo original do I.A.S. em sua versão para fundo escuro"></div>
+        <div class="cover-copy"><p class="eyebrow">INSTITUTO DE APRENDIZADO SOCIAL</p><h1><span class="cover-word">Conhecimento</span><br><em>em movimento.</em></h1><p class="lead">Transformando aprendizagem em experiência — e experiência em possibilidades.</p><div class="cover-rule"><span></span><small>UMA JORNADA PARA APRENDER, PRATICAR E DEMONSTRAR</small></div></div>
+        <div class="cover-visual" aria-hidden="true"><div class="mark-orbit"></div><div class="cover-mark"><img src="imgs/logo-escuro.png" alt=""></div></div>
         <div class="cover-index">PROPOSTA<br><strong>2026</strong></div>
       </section>
       <section class="slide question dark" data-chapter="O PONTO DE PARTIDA">
@@ -258,13 +386,13 @@
         <header class="teaching-head"><div><p class="eyebrow">07 — APRENDIZAGEM ENTRE ESTUDANTES</p><h2>Estudantes que <em>ensinam.</em></h2></div><p class="support">Quem concluiu um curso pode propor uma aula voluntária; a instituição organiza, supervisiona e agenda.</p></header>
         <div class="teaching-main">
           <ol class="teaching-flow" aria-label="Etapas para agendar e realizar uma aula">
-            <li><button type="button" class="stage-step" data-stage="1" aria-pressed="false"><i>01</i><span><b>Habilitado</b><small>Curso concluído no I.A.S.</small></span></button></li>
-            <li><button type="button" class="stage-step" data-stage="2" aria-pressed="false"><i>02</i><span><b>Propõe a aula</b><small>Tema · público · nível · duração</small></span></button></li>
-            <li><button type="button" class="stage-step" data-stage="3" aria-pressed="false"><i>03</i><span><b>Aprovação</b><small>Escopo e supervisor definidos</small></span></button></li>
-            <li><button type="button" class="stage-step flow-current" data-stage="4" aria-pressed="true"><i>04</i><span><b>Escolhe horário</b><small>Sede · sala · equipamentos</small></span></button></li>
-            <li><button type="button" class="stage-step" data-stage="5" aria-pressed="false"><i>05</i><span><b>Confirma</b><small>Vagas abertas aos alunos</small></span></button></li>
-            <li><button type="button" class="stage-step" data-stage="6" aria-pressed="false"><i>06</i><span><b>Aula realizada</b><small>Na universidade</small></span></button></li>
-            <li><button type="button" class="stage-step" data-stage="7" aria-pressed="false"><i>07</i><span><b>Feedback</b><small>Certificado de horas</small></span></button></li>
+            <li><button type="button" class="stage-step" data-stage="1" aria-pressed="false"><i><span class="stage-number">01</span><svg class="stage-check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg></i><span><b>Habilitado</b><small>Curso concluído no I.A.S.</small></span></button></li>
+            <li><button type="button" class="stage-step" data-stage="2" aria-pressed="false"><i><span class="stage-number">02</span><svg class="stage-check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg></i><span><b>Propõe a aula</b><small>Tema · público · nível · duração</small></span></button></li>
+            <li><button type="button" class="stage-step" data-stage="3" aria-pressed="false"><i><span class="stage-number">03</span><svg class="stage-check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg></i><span><b>Aprovação</b><small>Escopo e supervisor definidos</small></span></button></li>
+            <li><button type="button" class="stage-step flow-current" data-stage="4" aria-pressed="true"><i><span class="stage-number">04</span><svg class="stage-check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg></i><span><b>Escolhe horário</b><small>Sede · sala · equipamentos</small></span></button></li>
+            <li><button type="button" class="stage-step" data-stage="5" aria-pressed="false"><i><span class="stage-number">05</span><svg class="stage-check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg></i><span><b>Confirma</b><small>Vagas abertas aos alunos</small></span></button></li>
+            <li><button type="button" class="stage-step" data-stage="6" aria-pressed="false"><i><span class="stage-number">06</span><svg class="stage-check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg></i><span><b>Aula realizada</b><small>Na universidade</small></span></button></li>
+            <li><button type="button" class="stage-step" data-stage="7" aria-pressed="false"><i><span class="stage-number">07</span><svg class="stage-check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg></i><span><b>Feedback</b><small>Certificado de horas</small></span></button></li>
           </ol>
           <section class="weekly-calendar teaching-panel" aria-live="polite" aria-label="Painel da etapa selecionada">
             <div class="calendar-top"><div><span class="calendar-kicker" id="stage-panel-kicker">AGENDA DA PLATAFORMA</span><h3 id="stage-panel-title">Horários da semana</h3></div><span class="example-tag" id="stage-panel-tag">EXEMPLO</span></div>
@@ -294,30 +422,31 @@
                   <stop offset="100%" stop-color="#5bbdf8" />
                 </linearGradient>
               </defs>
-              <path class="journey-path" d="M 50 40 H 950" />
+              <path class="journey-path" id="journeyPath" d="M 35 40 C 120 2 190 78 285 40 S 455 2 525 40 S 695 78 765 40 S 900 2 965 40" />
+              <circle class="journey-light" r="4"><animateMotion dur="11s" repeatCount="indefinite"><mpath href="#journeyPath"/></animateMotion></circle>
             </svg>
             <div class="journey-steps">
               <button class="journey-card selected" type="button" data-step="0" aria-pressed="true" tabindex="0">
                 <span class="step-number">01</span>
-                <div class="step-icon">📋</div>
+                <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 4.5h8M9 3h6v3H9zM6 5.5h-2v15h16v-15h-2M8 10h8M8 14h8M8 18h5"/></svg></span>
                 <h3>Demanda</h3>
                 <p>A instituição ou um parceiro propõe um projeto real.</p>
               </button>
               <button class="journey-card" type="button" data-step="1" aria-pressed="false" tabindex="0">
                 <span class="step-number">02</span>
-                <div class="step-icon">📐</div>
+                <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 17.5 17.5 4l3 3L7 20.5H4zM13.5 8l2.5 2.5M10.5 11l2.5 2.5M7.5 14l2.5 2.5"/></svg></span>
                 <h3>Escopo</h3>
                 <p>Objetivo, prazo e limites definidos antes de começar.</p>
               </button>
               <button class="journey-card" type="button" data-step="2" aria-pressed="false" tabindex="0">
                 <span class="step-number">03</span>
-                <div class="step-icon">👨‍🏫</div>
+                <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3.5 19v-1.5a5.5 5.5 0 0 1 11 0V19zM16 5h4v9h-4zM17.5 8h1M17.5 11h1M16 19l2-2 2 2"/></svg></span>
                 <h3>Execução supervisionada</h3>
                 <p>O aluno desenvolve com apoio de um orientador.</p>
               </button>
               <button class="journey-card" type="button" data-step="3" aria-pressed="false" tabindex="0">
                 <span class="step-number">04</span>
-                <div class="step-icon">✅</div>
+                <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 7h14v13H5zM8 7V4h8v3M8 12h8M8 16h4M15 16l1.5 1.5L20 14"/></svg></span>
                 <h3>Entrega e registro</h3>
                 <p>Revisão, feedback e certificado de horas no portfólio.</p>
               </button>
@@ -334,11 +463,11 @@
           </div>
           <div class="area-card" id="area-card" aria-live="polite"></div>
         </div>
-        <div class="guardrails"><span>SUPERVISÃO ADEQUADA</span><span>ESCOPO TRANSPARENTE</span><span>USO DE PROJETOS AUTORIZADO</span><span>REGRAS APLICÁVEIS RESPEITADAS</span></div>
+        <div class="guardrails"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 19 6v5c0 4.5-3 7.5-7 10-4-2.5-7-5.5-7-10V6zM9 12l2 2 4-4"/></svg>SUPERVISÃO ADEQUADA</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg>ESCOPO TRANSPARENTE</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v12H4zM8 21h8M12 17v4M8 9h8M8 13h5"/></svg>USO DE PROJETOS AUTORIZADO</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 19 6v5c0 4.5-3 7.5-7 10-4-2.5-7-5.5-7-10V6zM9 12l2 2 4-4"/></svg>REGRAS APLICÁVEIS RESPEITADAS</span></div>
       </section>
       <section class="slide roadmap light" data-chapter="COMEÇAR COM INTENÇÃO">
-        <div class="section-head"><p class="eyebrow">COMEÇAR COM INTENÇÃO</p><h2>Pequeno no início.<br><em>Guiado pelo aprendizado.</em></h2><p class="support">Uma implantação gradual permite ajustar a proposta conforme recursos, participação e resultados.</p></div>
-        <div class="roadmap-steps" id="roadmap-steps"><svg class="roadmap-track" viewBox="0 0 1000 130" preserveAspectRatio="none" aria-hidden="true"><path class="track-base" d="M20 64 C135 64 135 24 260 24 S385 104 500 64 S635 24 750 24 S865 64 980 64"/><path class="track-active" d="M20 64 C135 64 135 24 260 24 S385 104 500 64 S635 24 750 24 S865 64 980 64" pathLength="100"/></svg><article class="roadmap-step selected" data-phase="0" tabindex="0" role="button" aria-pressed="true"><span>FASE 01</span><div class="roadmap-symbol">⌕</div><h3>Planejar</h3><p>Definir público, áreas, regras, responsabilidades e recursos.</p><small>ESCUTA + PREPARAÇÃO</small></article><article class="roadmap-step" data-phase="1" tabindex="0" role="button" aria-pressed="false"><span>FASE 02</span><div class="roadmap-symbol">↗</div><h3>Pilotar</h3><p>Realizar um workshop ou hackathon e recolher feedback.</p><small>TESTAR + APRENDER</small></article><article class="roadmap-step" data-phase="2" tabindex="0" role="button" aria-pressed="false"><span>FASE 03</span><div class="roadmap-symbol">▤</div><h3>Conectar</h3><p>Lançar página, calendário, inscrições e comunidade moderada.</p><small>PLATAFORMA MÍNIMA</small></article><article class="roadmap-step" data-phase="3" tabindex="0" role="button" aria-pressed="false"><span>FASE 04</span><div class="roadmap-symbol">⟡</div><h3>Expandir</h3><p>Ampliar atividades, mentoria, portfólios e parcerias.</p><small>EVOLUIR COM EVIDÊNCIAS</small></article></div><div class="roadmap-detail" id="roadmap-detail" aria-live="polite"></div>
+        <div class="section-head"><p class="eyebrow">NA PLATAFORMA · DO PLANO À PRÁTICA</p><h2>Pequeno no início.<br><em>Guiado pelo aprendizado.</em></h2><p class="support">Na plataforma, o estudante planeja um projeto para a própria comunidade, coloca em prática em um workshop ou hackathon e usa o feedback para evoluir.</p></div>
+        <div class="roadmap-steps" id="roadmap-steps"><svg class="roadmap-track" viewBox="0 0 1000 130" preserveAspectRatio="none" aria-hidden="true"><path class="track-base" id="roadmapPath" d="M20 64 C135 64 135 24 260 24 S385 104 500 64 S635 24 750 24 S865 64 980 64"/><path class="track-active" d="M20 64 C135 64 135 24 260 24 S385 104 500 64 S635 24 750 24 S865 64 980 64" pathLength="100"/><circle class="roadmap-light" r="4"><animateMotion dur="13s" repeatCount="indefinite"><mpath href="#roadmapPath"/></animateMotion></circle></svg><article class="roadmap-step selected" data-phase="0" tabindex="0" role="button" aria-pressed="true"><span>FASE 01</span><div class="roadmap-symbol" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5M8 10.5h5M10.5 8v5"/></svg></div><h3>Planejar</h3><p>Definir o projeto, o público da comunidade, objetivos, regras e recursos.</p><small>ESCUTA + PREPARAÇÃO</small></article><article class="roadmap-step" data-phase="1" tabindex="0" role="button" aria-pressed="false"><span>FASE 02</span><div class="roadmap-symbol" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 18h16M6 15l4-4 3 2 5-7M14 6h4v4"/></svg></div><h3>Pilotar</h3><p>Colocar em prática em um evento, como um workshop ou hackathon.</p><small>PRATICAR EM EVENTO</small></article><article class="roadmap-step" data-phase="2" tabindex="0" role="button" aria-pressed="false"><span>FASE 03</span><div class="roadmap-symbol" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v12H4zM8 9h8M8 13h4M7 21h10M12 17v4"/><path d="m15 10 1.5 1.5L19 9"/></svg></div><h3>Testar</h3><p>Recolher feedback dos participantes e testar o que funcionou.</p><small>FEEDBACK + VALIDAÇÃO</small></article><article class="roadmap-step" data-phase="3" tabindex="0" role="button" aria-pressed="false"><span>FASE 04</span><div class="roadmap-symbol" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 18 10 12l3 3 7-8M15 7h5v5M5 5h5M5 5v5"/></svg></div><h3>Expandir</h3><p>Ampliar o projeto com o que foi aprendido: novas edições, mentoria, portfólios e parcerias.</p><small>EVOLUIR COM EVIDÊNCIAS</small></article></div><div class="roadmap-detail" id="roadmap-detail" aria-live="polite"></div>
         <div class="measure-note"><b>AVALIAR PARA MELHORAR</b><span>Participação · projetos concluídos · competências · portfólios · mentores · parcerias · oportunidades</span><i>Sem números inventados. Sem promessa de emprego.</i></div>
       </section>
       <section class="slide closing dark" data-chapter="OBRIGADO POR FAZER PARTE">
@@ -777,11 +906,83 @@
     });
   }
 
+  const journeyDetails = [
+    'Demanda: A instituição ou um parceiro apresenta uma necessidade real para ser trabalhada com escopo e acompanhamento.',
+    'Escopo: Objetivo, prazo e limites ficam definidos antes do início do projeto.',
+    'Execução supervisionada: O estudante desenvolve o projeto com apoio de um orientador.',
+    'Entrega e registro: A entrega é revisada e a experiência pode ser registrada no portfólio.'
+  ];
+  const areaDetails = [
+    { title: 'Tecnologia · exemplo', lines: ['Projeto: Atualizar o site de um laboratório', 'Entrega: proposta de atualização revisada', 'Orientador: docente responsável pelo projeto'] },
+    { title: 'Comunicação · exemplo', lines: ['Projeto: Produzir o boletim mensal do curso', 'Entrega: edição demonstrativa revisada', 'Orientador: pessoa responsável pela comunicação'] },
+    { title: 'Design · exemplo', lines: ['Projeto: Criar a identidade visual de um evento', 'Entrega: conjunto de peças demonstrativas', 'Orientador: docente responsável pelo projeto'] },
+    { title: 'Mentoria e desafios · exemplo', lines: ['Projeto: Mentoria para iniciantes em um hackathon', 'Entrega: plano de orientação e devolutivas', 'Orientador: mentor e responsável institucional'] }
+  ];
+  const projectJourney = document.getElementById('project-journey');
+  const journeyDetail = document.getElementById('journey-detail');
+  const areaCard = document.getElementById('area-card');
+  let selectedStep = 0;
+  let selectedArea = 0;
+  function updateJourney() {
+    if (!projectJourney) return;
+    projectJourney.querySelectorAll('.journey-card').forEach((card, index) => {
+      const active = index === selectedStep;
+      card.classList.toggle('selected', active);
+      card.setAttribute('aria-pressed', String(active));
+    });
+    if (journeyDetail) {
+      journeyDetail.classList.remove('visible');
+      requestAnimationFrame(() => {
+        journeyDetail.textContent = journeyDetails[selectedStep];
+        journeyDetail.classList.add('visible');
+      });
+    }
+  }
+  function updateAreas() {
+    document.querySelectorAll('.partnership .area-chip').forEach((chip, index) => {
+      const active = index === selectedArea;
+      chip.classList.toggle('selected', active);
+      chip.setAttribute('aria-pressed', String(active));
+    });
+    if (areaCard) {
+      areaCard.classList.remove('visible');
+      requestAnimationFrame(() => {
+        const data = areaDetails[selectedArea];
+        areaCard.innerHTML = '<b>' + data.title + '</b>' + data.lines.map((line) => '<div class="area-line">' + line.replace(':', ': ') + '</div>').join('');
+        areaCard.classList.add('visible');
+      });
+    }
+  }
+  projectJourney?.querySelectorAll('.journey-card').forEach((card, index) => {
+    card.addEventListener('click', () => { selectedStep = index; updateJourney(); });
+  });
+  document.querySelectorAll('.partnership .area-chip').forEach((chip, index) => {
+    chip.addEventListener('click', () => { selectedArea = index; updateAreas(); });
+  });
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    projectJourney?.querySelectorAll('.journey-card').forEach((card) => {
+      card.addEventListener('pointermove', (event) => {
+        const bounds = card.getBoundingClientRect();
+        const x = (event.clientX - bounds.left) / bounds.width - .5;
+        const y = (event.clientY - bounds.top) / bounds.height - .5;
+        card.style.setProperty('--tilt-x', (-y * 6) + 'deg');
+        card.style.setProperty('--tilt-y', (x * 6) + 'deg');
+      });
+      card.addEventListener('pointerleave', () => {
+        card.style.removeProperty('--tilt-x');
+        card.style.removeProperty('--tilt-y');
+      });
+    });
+  }
+  updateJourney();
+  updateAreas();
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.querySelectorAll('.journey-light animateMotion').forEach((motion) => motion.remove());
+
   const phaseInfo = [
-    ['Preparar uma base responsável', 'Alinhar público, áreas de atuação, regras, responsabilidades e recursos disponíveis.', 'Escuta inicial, escopo definido e responsabilidades documentadas.', 'Avançar quando houver condições, pessoas responsáveis e limites claros.'],
-    ['Testar em pequena escala', 'Realizar uma atividade piloto, como workshop ou hackathon, e recolher feedback.', 'Participação, aprendizados, feedback e pontos de melhoria observados.', 'Revisar aprendizados e capacidade antes de decidir os próximos passos.'],
-    ['Conectar recursos e pessoas', 'Organizar uma presença digital, calendário de atividades e comunidade moderada.', 'Acessibilidade dos recursos, qualidade das interações e necessidades de moderação.', 'Avançar conforme recursos, participação e acompanhamento forem sustentáveis.'],
-    ['Evoluir com evidências', 'Ampliar atividades, mentoria, portfólios e parcerias de forma gradual.', 'Experiências documentadas, competências desenvolvidas e feedback das pessoas envolvidas.', 'Revisar continuamente o que funciona e ajustar a proposta.']
+    ['Planejar', 'Definir o projeto, o público da comunidade, objetivos, regras e recursos.', 'Público, objetivos, regras e recursos definidos com a comunidade.', 'Plano alinhado às necessidades da comunidade e aos recursos disponíveis.'],
+    ['Pilotar', 'Colocar em prática em um evento, como um workshop ou hackathon.', 'Participação, dúvidas e pontos de atenção observados durante a atividade.', 'Aprendizados do evento orientam os próximos testes.'],
+    ['Testar', 'Recolher feedback dos participantes e testar o que funcionou.', 'Retornos dos participantes e mudanças observadas entre uma tentativa e outra.', 'Manter ou ajustar a proposta com base no feedback.'],
+    ['Expandir', 'Ampliar o projeto com novas edições, mentoria, portfólios e parcerias.', 'Aprendizados registrados, interesse da comunidade e recursos disponíveis.', 'Ampliar com acompanhamento e condições sustentáveis.']
   ];
   const roadmap = document.getElementById('roadmap-steps');
   const roadmapDetail = document.getElementById('roadmap-detail');
@@ -792,11 +993,17 @@
       const active = Number(step.dataset.phase) === index;
       step.classList.toggle('selected', active);
       step.setAttribute('aria-pressed', String(active));
+      if (active) step.setAttribute('aria-current', 'step');
+      else step.removeAttribute('aria-current');
     });
     const activePath = roadmap?.querySelector('.track-active');
     if (activePath) activePath.style.strokeDasharray = `${[18, 41, 68, 100][index]} 100`;
     const [title, activity, evidence, criteria] = phaseInfo[index];
-    roadmapDetail.innerHTML = `<div><small>FASE ${String(index + 1).padStart(2, '0')} · EXEMPLO</small><b>${title}</b></div><p><strong>Atividade:</strong> ${activity}</p><p><strong>Evidências a acompanhar:</strong> ${evidence}</p><p><strong>Critério ilustrativo:</strong> ${criteria}</p>`;
+    roadmapDetail.classList.remove('phase-visible');
+    requestAnimationFrame(() => {
+      roadmapDetail.innerHTML = '<div class="measure-title"><small>FASE ' + String(index + 1).padStart(2, '0') + ' · EXEMPLO</small><b>' + title + '</b></div><div><small>ATIVIDADE</small><p>' + activity + '</p></div><div><small>EVIDÊNCIAS A ACOMPANHAR</small><p>' + evidence + '</p></div><div><small>CRITÉRIO ILUSTRATIVO</small><p>' + criteria + '</p></div>';
+      roadmapDetail.classList.add('phase-visible');
+    });
   }
   roadmap?.querySelectorAll('.roadmap-step').forEach((step) => {
     const index = Number(step.dataset.phase);
