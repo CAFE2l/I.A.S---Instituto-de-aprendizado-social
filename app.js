@@ -199,6 +199,76 @@
     });
   }
 
+  const scheduleModal = document.getElementById('schedule-modal');
+  const scheduleDialog = scheduleModal?.querySelector('.schedule-dialog');
+  const modalWhen = document.getElementById('modal-when');
+  const modalFree = document.getElementById('modal-free-content');
+  const modalStatus = document.getElementById('modal-status');
+  const reserveSlot = document.getElementById('reserve-slot');
+  let activeSlot = null;
+  let modalReturnFocus = null;
+  const closeScheduleModal = () => {
+    if (!scheduleModal?.classList.contains('open')) return;
+    scheduleModal.classList.remove('open');
+    scheduleModal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+    scheduleDialog?.classList.remove('is-booked', 'is-confirmed', 'is-status');
+    modalStatus?.classList.remove('show');
+    modalFree?.removeAttribute('hidden');
+    modalReturnFocus?.focus();
+  };
+  const openScheduleModal = (slot) => {
+    activeSlot = slot;
+    modalReturnFocus = slot;
+    const { day, time, state } = slot.dataset;
+    modalWhen.textContent = `${day} · ${time}`;
+    scheduleDialog.classList.remove('is-booked', 'is-confirmed', 'is-status');
+    modalStatus.classList.remove('show');
+    modalFree.removeAttribute('hidden');
+    if (state === 'booked') {
+      scheduleDialog.classList.add('is-booked', 'is-status');
+      modalStatus.innerHTML = `<strong>Horário não disponível</strong><span>Reservado por Prof. Jorge (exemplo).<br>${day}, às ${time}.</span>`;
+      modalStatus.classList.add('show');
+    } else if (state === 'confirmed') {
+      scheduleDialog.classList.add('is-confirmed', 'is-status');
+      modalStatus.innerHTML = `<strong>Agendamento confirmado</strong><span>${day}, às ${time}.<br>Tema: TI (exemplo).</span>`;
+      modalStatus.classList.add('show');
+    }
+    scheduleModal.classList.add('open');
+    scheduleModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+    requestAnimationFrame(() => (state === 'free' ? reserveSlot : scheduleDialog).focus());
+  };
+  document.querySelectorAll('.teaching .slot').forEach((slot) => {
+    slot.setAttribute('aria-label', `${slot.dataset.day}, ${slot.dataset.time}: ${slot.textContent.trim()} (exemplo). Clique para detalhes.`);
+    slot.addEventListener('click', () => openScheduleModal(slot));
+  });
+  document.querySelectorAll('.teaching .calendar-grid > *').forEach((cell, index) => cell.style.setProperty('--cell-index', index + 1));
+  scheduleModal?.querySelectorAll('[data-modal-close]').forEach((control) => control.addEventListener('click', closeScheduleModal));
+  reserveSlot?.addEventListener('click', () => {
+    if (!activeSlot) return;
+    activeSlot.dataset.state = 'booked';
+    activeSlot.classList.remove('free', 'confirmed');
+    activeSlot.classList.add('booked', 'just-reserved');
+    activeSlot.textContent = 'Reservado';
+    activeSlot.setAttribute('aria-label', `${activeSlot.dataset.day}, ${activeSlot.dataset.time}: Reservado (exemplo). Clique para detalhes.`);
+    activeSlot.addEventListener('animationend', () => activeSlot?.classList.remove('just-reserved'), { once: true });
+    closeScheduleModal();
+  });
+  scheduleDialog?.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') { event.preventDefault(); event.stopPropagation(); closeScheduleModal(); return; }
+    if (event.key !== 'Tab') return;
+    const focusable = Array.from(scheduleDialog.querySelectorAll('button:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])')).filter((item) => item.offsetParent !== null);
+    if (!focusable.length) { event.preventDefault(); scheduleDialog.focus(); return; }
+    const first = focusable[0]; const last = focusable[focusable.length - 1];
+    if (document.activeElement === scheduleDialog) { event.preventDefault(); (event.shiftKey ? last : first).focus(); }
+    else if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+    else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+  });
+
+  const today = new Date().getDay();
+  document.querySelector(`.teaching .day-head[data-weekday="${today}"]`)?.classList.add('today');
+
   const aiExplanations = {
     person: ['A pessoa conduz.', 'A IA apoia o trabalho; o estudante continua responsável pelo julgamento e pelas decisões.'],
     knowledge: ['Conhecimento exige contexto.', 'Sugestões da IA precisam ser compreendidas, verificadas e relacionadas a fontes confiáveis.'],
@@ -239,37 +309,81 @@
   });
   aiSystem?.addEventListener('pointerleave', () => { aiSystem.style.removeProperty('--tilt-x'); aiSystem.style.removeProperty('--tilt-y'); });
 
-  const partnerDetails = [
-    ['Projetos digitais internos', 'Desenvolver soluções digitais para necessidades institucionais, com escopo definido, revisão e acompanhamento.', 'Contribuição possível: protótipos, documentação ou melhorias acordadas.', 'Limite: acesso, publicação e uso definidos pela instituição.'],
-    ['Materiais institucionais', 'Organizar recursos e materiais que apoiem a comunicação e as atividades de aprendizagem.', 'Contribuição possível: pesquisa, estruturação e produção de materiais.', 'Limite: conteúdo revisado e aprovado antes de qualquer uso institucional.'],
-    ['Comunicação visual', 'Criar materiais consistentes com a identidade visual institucional.', 'Contribuição possível: propostas visuais para projetos e ações autorizadas.', 'Limite: publicação depende de revisão e aprovação institucional.'],
-    ['Mentoria e desafios', 'Explorar desafios orientados, receber feedback e desenvolver competências em ambiente supervisionado.', 'Contribuição possível: compartilhar contexto, orientar e oferecer devolutivas.', 'Limite: escopo transparente, acompanhamento e regras aplicáveis.']
+  const journeyDetails = [
+    'Demanda: A instituição ou um parceiro propõe um projeto real, com contexto e necessidade identificados.',
+    'Escopo: Objetivo, prazo, recursos e limites são definidos antes de o aluno iniciar a execução.',
+    'Execução supervisionada: O aluno desenvolve com apoio de um orientador, validando etapas ao longo do caminho.',
+    'Entrega e registro: Revisão, feedback e certificado de horas são registrados no portfólio do aluno.'
   ];
-  const partnerScene = document.querySelector('.partner-scene');
-  const partnerDetail = document.getElementById('partner-detail');
-  let selectedPartner = -1;
-  function selectPartner(index) {
-    selectedPartner = index;
-    partnerScene?.querySelectorAll('.partner-card').forEach((card) => {
-      const active = Number(card.dataset.partner) === index;
+  const areaDetails = [
+    { title: 'Tecnologia', lines: ['Projeto: Atualizar o site de um laboratório', 'Entrega: site publicado', 'Orientador: professor da área'] },
+    { title: 'Comunicação', lines: ['Projeto: Produzir o boletim mensal do curso', 'Entrega: 3 edições', 'Orientador: coordenação'] },
+    { title: 'Design', lines: ['Projeto: Criar a identidade visual de um evento', 'Entrega: kit de peças', 'Orientador: professor de design'] },
+    { title: 'Mentoria e desafios', lines: ['Projeto: Mentoria para alunos iniciantes em um hackathon', 'Entrega: equipe orientada', 'Orientador: aluno veterano + docente'] }
+  ];
+  const projectJourney = document.getElementById('project-journey');
+  const journeyDetail = document.getElementById('journey-detail');
+  const areaCard = document.getElementById('area-card');
+  let selectedStep = 0;
+  let selectedArea = 0;
+  function updateJourney() {
+    if (!projectJourney) return;
+    projectJourney.querySelectorAll('.journey-card').forEach((card, index) => {
+      const active = index === selectedStep;
       card.classList.toggle('selected', active);
       card.setAttribute('aria-pressed', String(active));
     });
-    partnerScene?.querySelectorAll('.partner-lines path').forEach((path) => path.classList.toggle('active', Number(path.dataset.link) === index));
-    if (index < 0) {
-      partnerDetail.classList.remove('open');
-      partnerDetail.innerHTML = '<b>Colaboração com propósito</b><span>Selecione uma área para explorar exemplos de contribuição, escopo e acompanhamento.</span><button type="button" data-partner-close aria-label="Fechar detalhes">×</button>';
-      return;
+    if (journeyDetail) {
+      journeyDetail.textContent = journeyDetails[selectedStep] || '';
+      journeyDetail.classList.add('visible');
     }
-    const [title, objective, contribution, boundary] = partnerDetails[index];
-    partnerDetail.innerHTML = `<b>${title}</b><p>${objective}</p><span><strong>Possibilidade:</strong> ${contribution}</span><span><strong>Limites:</strong> ${boundary}</span><button type="button" data-partner-close aria-label="Fechar detalhes">×</button>`;
-    partnerDetail.classList.add('open');
   }
-  partnerScene?.querySelectorAll('.partner-card').forEach((card) => card.addEventListener('click', () => selectPartner(Number(card.dataset.partner))));
-  partnerDetail?.addEventListener('click', (event) => { if (event.target.closest('[data-partner-close]')) selectPartner(-1); });
-  document.querySelector('.partnership')?.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && selectedPartner >= 0) { const previous = selectedPartner; selectPartner(-1); partnerScene.querySelector(`[data-partner="${previous}"]`)?.focus(); }
+  function updateAreas() {
+    projectJourney?.parentElement?.querySelectorAll('.area-chip').forEach((chip, index) => {
+      const active = index === selectedArea;
+      chip.classList.toggle('selected', active);
+      chip.setAttribute('aria-pressed', String(active));
+    });
+    if (areaCard) {
+      const data = areaDetails[selectedArea];
+      if (data) {
+        areaCard.innerHTML = `<b>${data.title}</b>${data.lines.map(line => `<div class="area-line">${line.replace(':', ': ')}</div>`).join('')}`;
+      }
+      areaCard.classList.add('visible');
+    }
+  }
+  projectJourney?.querySelectorAll('.journey-card').forEach((card, index) => {
+    card.addEventListener('click', () => {
+      selectedStep = index;
+      updateJourney();
+    });
+    card.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        event.stopPropagation();
+        selectedStep = index;
+        updateJourney();
+        card.focus();
+      }
+    });
   });
+  projectJourney?.parentElement?.querySelectorAll('.area-chip').forEach((chip, index) => {
+    chip.addEventListener('click', () => {
+      selectedArea = index;
+      updateAreas();
+    });
+    chip.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        event.stopPropagation();
+        selectedArea = index;
+        updateAreas();
+        chip.focus();
+      }
+    });
+  });
+  updateJourney();
+  updateAreas();
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     partnerScene?.querySelectorAll('.partner-card').forEach((card) => {
       card.addEventListener('pointermove', (event) => {
@@ -314,6 +428,10 @@
   selectPhase(0);
 
   document.addEventListener('keydown', (event) => {
+    if (scheduleModal?.classList.contains('open')) {
+      if (event.key === 'Escape') closeScheduleModal();
+      return;
+    }
     if (isTypingTarget(event.target) || event.altKey || event.ctrlKey || event.metaKey) return;
     if (event.key === 'ArrowRight' || event.key === ' ' || event.key === 'PageDown') {
       event.preventDefault();
@@ -327,6 +445,9 @@
     } else if (event.key === 'End') {
       event.preventDefault();
       showSlide(slides.length - 1);
+    } else if (event.key === 'f' || event.key === 'F') {
+      event.preventDefault();
+      fullscreen.click();
     } else if (event.key === 'Escape' && demoState.detail) {
       demoState.detail = null; renderDemo();
     } else if (event.key === 'Escape' && document.fullscreenElement) {
@@ -340,6 +461,7 @@
     touchStartY = touch.clientY;
   }, { passive: true });
   stage.addEventListener('touchend', (event) => {
+    if (scheduleModal?.classList.contains('open')) { touchStartX = null; touchStartY = null; return; }
     if (touchStartX === null) return;
     const touch = event.changedTouches[0];
     const dx = touch.clientX - touchStartX;
