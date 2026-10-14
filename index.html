@@ -133,14 +133,14 @@
 
 /* Slide 03 proposal dialog */
 .eco-node[aria-haspopup="dialog"]:after{content:"Toque para saber mais";display:block;margin-top:2px;color:rgba(187,225,249,.76);font-size:6px;letter-spacing:.08em;opacity:.72;transition:opacity .2s}.eco-node:hover:after,.eco-node:focus-visible:after{opacity:1}
-.proposal-modal{position:fixed;z-index:30;inset:0;display:grid;place-items:center;padding:24px;visibility:hidden;pointer-events:none}.proposal-modal.open{visibility:visible;pointer-events:auto}.proposal-modal-backdrop{position:absolute;inset:0;background:rgba(2,12,32,.65);opacity:0;backdrop-filter:blur(0);-webkit-backdrop-filter:blur(0);transition:opacity .38s ease,backdrop-filter .38s ease}.proposal-modal.open .proposal-modal-backdrop{opacity:1;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-.proposal-dialog{--accent:#70d5ff;--mx:50%;--my:35%;position:relative;width:min(92vw,720px);max-height:86dvh;overflow:hidden;isolation:isolate;border:1px solid rgba(161,220,251,.42);border-radius:26px;padding:clamp(25px,4vw,48px);color:#f3f8fc;background:linear-gradient(145deg,rgba(13,49,94,.96),rgba(5,23,55,.97));box-shadow:0 34px 90px rgba(1,12,32,.52),0 0 0 1px rgba(167,221,250,.12),0 0 44px color-mix(in srgb,var(--accent) 18%,transparent),inset 0 1px rgba(255,255,255,.2);backdrop-filter:blur(18px) saturate(150%);-webkit-backdrop-filter:blur(18px) saturate(150%);transform:translate3d(var(--from-x,0px),var(--from-y,0px),0) scale(var(--from-scale,.88)) rotateX(7deg) rotateY(-5deg);opacity:0;transition:transform .52s cubic-bezier(.2,.78,.2,1),opacity .3s ease;transform-style:preserve-3d;will-change:transform,opacity}.proposal-dialog:before{content:"";position:absolute;z-index:-1;inset:-1px;border-radius:inherit;padding:1px;background:conic-gradient(from var(--led-angle,0deg),transparent 0 55%,var(--accent),#d4f3ff,transparent 76%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.7;animation:proposalLed 9s linear infinite;pointer-events:none}.proposal-dialog:after{content:"";position:absolute;z-index:-1;inset:0;border-radius:inherit;background:radial-gradient(ellipse at var(--mx) var(--my),rgba(152,220,255,.16),transparent 43%);pointer-events:none}.proposal-modal.open .proposal-dialog{transform:translate3d(0,0,0) scale(1) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg));opacity:1}
+.proposal-modal{position:fixed;z-index:30;inset:0;display:grid;place-items:center;padding:24px;visibility:hidden;pointer-events:none}.proposal-modal.open{visibility:visible;pointer-events:auto}.proposal-modal-backdrop{position:absolute;inset:0;background:rgba(2,12,32,.65);opacity:0;backdrop-filter:blur(0);-webkit-backdrop-filter:blur(0);transition:opacity .38s ease}.proposal-modal.open .proposal-modal-backdrop{opacity:1;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.proposal-dialog{--accent:#70d5ff;--mx:50%;--my:35%;position:relative;width:min(92vw,720px);max-height:86dvh;overflow:hidden;isolation:isolate;border:1px solid rgba(161,220,251,.42);border-radius:26px;padding:clamp(25px,4vw,48px);color:#f3f8fc;background:linear-gradient(145deg,rgba(13,49,94,.96),rgba(5,23,55,.97));box-shadow:0 34px 90px rgba(1,12,32,.52),0 0 0 1px rgba(167,221,250,.12),0 0 44px color-mix(in srgb,var(--accent) 18%,transparent),inset 0 1px rgba(255,255,255,.2);backdrop-filter:blur(18px) saturate(150%);-webkit-backdrop-filter:blur(18px) saturate(150%);transform:translate3d(var(--from-x,0px),var(--from-y,0px),0) scale(var(--from-scale,.88)) rotateX(7deg) rotateY(-5deg);opacity:0;transition:transform .52s cubic-bezier(.2,.78,.2,1),opacity .3s ease;transform-style:preserve-3d}.proposal-modal.animating .proposal-dialog{will-change:transform,opacity}.proposal-dialog:before{content:"";position:absolute;z-index:0;inset:-1px;border-radius:inherit;padding:1px;background:conic-gradient(transparent 0 55%,var(--accent),#d4f3ff,transparent 76%);transform:rotate(0deg);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.7;animation:proposalLed 9s linear infinite;pointer-events:none}.proposal-dialog:after{content:"";position:absolute;z-index:0;inset:0;border-radius:inherit;background:radial-gradient(ellipse at var(--mx) var(--my),rgba(152,220,255,.16),transparent 43%);pointer-events:none}.proposal-modal.open .proposal-dialog{transform:translate3d(0,0,0) scale(1) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg));opacity:1}
 .proposal-close{position:absolute;z-index:3;right:16px;top:16px;width:38px;height:38px;border:1px solid rgba(205,233,250,.3);border-radius:50%;background:linear-gradient(145deg,rgba(255,255,255,.16),rgba(255,255,255,.04));color:#e9f7ff;font:24px/1 var(--sans);cursor:pointer;box-shadow:inset 0 1px rgba(255,255,255,.15);transition:transform .2s,opacity .2s,box-shadow .2s,border-color .2s}.proposal-close:hover,.proposal-close:focus-visible{transform:scale(1.06);border-color:var(--accent);box-shadow:0 0 20px color-mix(in srgb,var(--accent) 38%,transparent)}.proposal-close:focus-visible{outline:2px solid #bdeaff;outline-offset:3px}
 .proposal-dialog-content{position:relative;z-index:1;display:grid;grid-template-columns:112px minmax(0,1fr);gap:8px 24px;align-items:center;transform-style:preserve-3d}.proposal-modal.open .proposal-dialog-content>*{animation:proposalContentIn .4s both}.proposal-modal.open .proposal-dialog-content>*:nth-child(2){animation-delay:.06s}.proposal-modal.open .proposal-dialog-content>*:nth-child(3){animation-delay:.14s}.proposal-modal.open .proposal-dialog-content>*:nth-child(4){animation-delay:.22s}.proposal-modal.open .proposal-dialog-content>*:nth-child(5){animation-delay:.3s}.proposal-number{grid-column:1;grid-row:1/4;align-self:stretch;display:flex;flex-direction:column;justify-content:space-between;color:var(--accent);transform:translateZ(28px)}.proposal-number strong{font:clamp(46px,7vw,76px)/.9 var(--serif);letter-spacing:-.06em;text-shadow:0 0 28px color-mix(in srgb,var(--accent) 35%,transparent)}.proposal-number span{font-size:7px;letter-spacing:.18em;color:rgba(226,241,251,.62)}.proposal-icon-wrap{width:60px;height:60px;margin-top:9px;display:grid;place-items:center;border:1px solid color-mix(in srgb,var(--accent) 55%,transparent);border-radius:18px;background:linear-gradient(145deg,color-mix(in srgb,var(--accent) 19%,transparent),rgba(255,255,255,.035));box-shadow:0 0 24px color-mix(in srgb,var(--accent) 18%,transparent),inset 0 1px rgba(255,255,255,.17);transform:translateZ(38px)}.proposal-icon-wrap svg{width:29px;height:29px;fill:none;stroke:var(--accent);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}.proposal-dialog-kicker{grid-column:2;margin:0 48px 0 0;color:var(--accent);font-size:8px;letter-spacing:.18em}.proposal-dialog h3{grid-column:2;margin:0;color:#f3f8fc;font:clamp(24px,3.2vw,38px)/1.12 var(--serif);letter-spacing:-.025em;transform:translateZ(16px)}.proposal-dialog-copy{grid-column:2;margin:2px 0 0;color:rgba(229,241,250,.78);font:clamp(12px,1.15vw,15px)/1.7 var(--sans);transform:translateZ(10px)}.proposal-chips{grid-column:2;display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.proposal-chips span{padding:8px 11px;border:1px solid rgba(190,225,247,.19);border-radius:99px;background:linear-gradient(135deg,rgba(255,255,255,.1),rgba(255,255,255,.035));color:#d9ebf7;font-size:8px;letter-spacing:.08em;backdrop-filter:blur(8px)}.proposal-connect{grid-column:1/3;display:flex;align-items:center;gap:12px;margin-top:18px;color:rgba(207,229,244,.56);font-size:7px;letter-spacing:.16em}.proposal-connect:before,.proposal-connect:after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,var(--accent),transparent);box-shadow:0 0 8px var(--accent)}
-@keyframes proposalLed{to{--led-angle:360deg}}@keyframes proposalContentIn{from{opacity:0;transform:translate3d(0,9px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+@keyframes proposalLed{to{transform:rotate(360deg)}}@keyframes proposalContentIn{from{opacity:0;transform:translate3d(0,9px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
 @media(max-width:650px){.proposal-modal{align-items:end;padding:0}.proposal-dialog{width:100%;max-height:86dvh;border-radius:24px 24px 0 0;padding:34px 24px max(28px,env(safe-area-inset-bottom));transform:translate3d(var(--from-x,0px),var(--from-y,0px),0) scale(var(--from-scale,.92))}.proposal-dialog-content{grid-template-columns:70px minmax(0,1fr);gap:9px 15px}.proposal-number{grid-row:1/4}.proposal-number strong{font-size:50px}.proposal-icon-wrap{width:48px;height:48px;border-radius:14px}.proposal-icon-wrap svg{width:24px;height:24px}.proposal-dialog h3{font-size:25px}.proposal-dialog-copy{font-size:12px;line-height:1.6}.proposal-chips{gap:6px;margin-top:8px}.proposal-chips span{padding:7px 9px;font-size:7px}.proposal-connect{grid-column:1/3;margin-top:14px;font-size:6px}}
 @supports not ((backdrop-filter:blur(1px))){.proposal-dialog{background:#0a2851}.proposal-modal-backdrop{background:rgba(2,12,32,.82)}}
-@media(prefers-reduced-motion:reduce){.proposal-modal-backdrop,.proposal-dialog,.proposal-close{transition:none}.proposal-dialog:before{animation:none}.proposal-modal.open .proposal-dialog-content>*{animation:none;opacity:1}}
+@media(prefers-reduced-motion:reduce){.proposal-modal-backdrop,.proposal-dialog,.proposal-close{transition:none}.proposal-dialog:before{animation:none}.proposal-dialog,.proposal-modal.open .proposal-dialog{transform:none!important}.proposal-modal.open .proposal-dialog-content>*{animation:none;opacity:1}}
 
 /* Slide 07 — agenda para aulas entre estudantes */
 .teaching{padding-top:clamp(76px,9vh,96px);padding-bottom:clamp(73px,9vh,92px);background:radial-gradient(ellipse at 76% 54%,rgba(48,130,207,.18),transparent 38%),linear-gradient(125deg,#041a3e,#082b68 65%,#061d47);display:flex;flex-direction:column;gap:clamp(12px,2vh,20px)}
@@ -678,6 +678,8 @@
   let proposalPointerFrame = 0;
   let proposalDialogBounds = null;
   let proposalMotionCleanup = () => {};
+  let proposalOpenFallback = 0;
+  let proposalCloseFallback = 0;
 
   function proposalMarkup(data) {
     return `<div class="proposal-number"><strong>${data.number}</strong><span>${data.group}</span><span class="proposal-icon-wrap">${data.icon}</span></div><p class="proposal-dialog-kicker">A PROPOSTA · REDE DE COLABORAÇÃO</p><h3 id="proposal-dialog-title">${data.title}</h3><p class="proposal-dialog-copy">${data.text}</p><div class="proposal-chips" aria-label="Ações">${data.tags.map((tag) => `<span>${tag}</span>`).join('')}</div><div class="proposal-connect" aria-hidden="true">CONECTADO AO I.A.S.</div>`;
@@ -712,7 +714,7 @@
   }
 
   function openProposalModal(node) {
-    if (!proposalModal || !proposalDialog || proposalModalOpen) return;
+    if (!proposalModal || !proposalDialog || proposalModalOpen || proposalModal.classList.contains('animating')) return;
     const data = proposalCopy[node.dataset.ecoNode];
     if (!data) return;
     activeProposalNode = node;
@@ -732,24 +734,32 @@
     proposalModal.classList.add('open');
     proposalModalOpen = true;
     requestAnimationFrame(() => {
+      if (!proposalModalOpen) return;
       proposalDialog.focus({ preventScroll: true });
       startProposalPointer();
     });
-    proposalDialog.addEventListener('transitionend', function finishOpen(event) {
-      if (event.propertyName !== 'transform' || !proposalModalOpen) return;
-      proposalModal.classList.remove('animating');
+    const finishOpen = (event) => {
+      if (event && event.propertyName !== 'transform') return;
       proposalDialog.removeEventListener('transitionend', finishOpen);
-    });
+      window.clearTimeout(proposalOpenFallback);
+      if (proposalModalOpen) proposalModal.classList.remove('animating');
+    };
+    proposalDialog.addEventListener('transitionend', finishOpen);
+    proposalOpenFallback = window.setTimeout(() => finishOpen(), window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 600);
   }
 
   closeProposalModal = (returnFocus = true) => {
     if (!proposalModalOpen || !proposalModal || !proposalDialog) return;
+    window.clearTimeout(proposalOpenFallback);
     proposalMotionCleanup();
     proposalModalOpen = false;
     proposalModal.classList.add('animating');
     proposalModal.classList.remove('open');
-    proposalDialog.addEventListener('transitionend', function finishClose(event) {
-      if (event.propertyName !== 'transform' || proposalModalOpen) return;
+    const finishClose = (event) => {
+      if (event && event.propertyName !== 'transform') return;
+      proposalDialog.removeEventListener('transitionend', finishClose);
+      window.clearTimeout(proposalCloseFallback);
+      if (proposalModalOpen) return;
       proposalModal.classList.remove('animating');
       proposalModal.setAttribute('aria-hidden', 'true');
       proposalDialog.style.removeProperty('--from-x');
@@ -758,7 +768,9 @@
       proposalDialog.removeEventListener('transitionend', finishClose);
       if (returnFocus && activeProposalNode?.isConnected) activeProposalNode.focus({ preventScroll: true });
       activeProposalNode = null;
-    });
+    };
+    proposalDialog.addEventListener('transitionend', finishClose);
+    proposalCloseFallback = window.setTimeout(() => finishClose(), window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 600);
   };
 
   proposalModal?.querySelectorAll('[data-proposal-close]').forEach((control) => control.addEventListener('click', () => closeProposalModal()));
@@ -1167,6 +1179,10 @@
       if (event.key === 'Escape') closeScheduleModal();
       return;
     }
+    if (proposalModalOpen) {
+      if (event.key === 'Escape') closeProposalModal();
+      return;
+    }
     if (isTypingTarget(event.target) || event.altKey || event.ctrlKey || event.metaKey) return;
     if (event.key === 'ArrowRight' || event.key === ' ' || event.key === 'PageDown') {
       event.preventDefault();
@@ -1196,7 +1212,7 @@
     touchStartY = touch.clientY;
   }, { passive: true });
   stage.addEventListener('touchend', (event) => {
-    if (scheduleModal?.classList.contains('open')) { touchStartX = null; touchStartY = null; return; }
+    if (scheduleModal?.classList.contains('open') || proposalModalOpen) { touchStartX = null; touchStartY = null; return; }
     if (touchStartX === null) return;
     const touch = event.changedTouches[0];
     const dx = touch.clientX - touchStartX;
