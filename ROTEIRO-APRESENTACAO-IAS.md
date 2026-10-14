@@ -96,17 +96,28 @@ tags:
 
 **Transição:** “A aprendizagem também pode acontecer em projetos com orientação e limites bem definidos.”
 
-## 8. Aprender junto. Contribuir com sentido.
+## 8. Projetos reais. Aprendizado supervisionado.
 
-**Objetivo:** mostrar formas possíveis de colaboração supervisionada.
+**Objetivo:** explicar como uma demanda pode virar uma experiência prática, com orientação, limites claros e registro do que foi aprendido.
 
 **Sugestão de fala**
 
-“Projetos institucionais podem oferecer oportunidades de aprender contribuindo. Isso pode envolver soluções digitais, materiais institucionais, comunicação visual ou desafios acompanhados por mentores. Cada atividade precisa ter escopo, revisão e responsabilidades claros. Os cards mostram possibilidades, não parcerias ou compromissos já confirmados.”
+“Depois de aprender e praticar, vem uma pergunta: como transformar esse conhecimento em uma contribuição concreta? Uma possibilidade é participar de projetos da própria instituição ou de parceiros. Para que isso também seja uma experiência de aprendizagem, o trabalho começa com uma demanda clara e um escopo combinado: o que será feito, em quanto tempo e quais são os limites.
 
-**Interação:** selecione um card e destaque o objetivo, a contribuição possível e os limites apresentados no painel.
+Durante a execução, o estudante conta com acompanhamento de uma pessoa orientadora. Ao final, a entrega passa por revisão e feedback, e a atividade pode ser registrada no portfólio com as horas realizadas. Assim, não mostramos apenas o resultado: também fica visível o processo, a colaboração e o aprendizado.
 
-**Transição:** “Para que a proposta seja responsável, faz sentido começar em pequena escala e aprender com cada etapa.”
+As áreas aqui são possibilidades ilustrativas. A participação depende de autorização, supervisão e condições adequadas; não representa uma parceria já confirmada nem uma promessa de emprego, e não substitui uma vaga remunerada.”
+
+**Como apresentar o fluxo:**
+
+1. **Demanda:** a instituição ou um parceiro pode propor um projeto real.
+2. **Escopo:** antes de começar, são definidos objetivo, prazo e limites.
+3. **Execução supervisionada:** o estudante desenvolve a atividade com apoio de uma pessoa orientadora.
+4. **Entrega e registro:** a entrega é revisada, há feedback e o aprendizado pode ser documentado no portfólio.
+
+**Interação:** percorra as quatro etapas da esquerda para a direita. Depois, escolha uma área — tecnologia, comunicação, design ou mentoria e desafios — e explique que o painel apresenta um cenário de exemplo. Destaque o objetivo, a contribuição possível, quem orienta e o que ainda precisa de revisão ou autorização.
+
+**Transição:** “Para que uma proposta como essa seja viável, faz sentido começar em pequena escala, observar o que funciona e ajustar o caminho.”
 
 ## 9. Pequeno no início. Guiado pelo aprendizado.
 
